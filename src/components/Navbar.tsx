@@ -23,7 +23,6 @@ const Navbar = () => {
         <NavLink to="/" onClick={closeMenu}>
           Sachin Singh Chaudhary
         </NavLink>
-        <span>Portfolio 2025</span>
       </div>
 
       <button
