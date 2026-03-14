@@ -75,7 +75,7 @@ export const narrative = {
 export const educationTimeline: TimelineItem[] = [
   {
     period: '2021 – 2025',
-    title: 'Bachelor in Computer Application (3.01 GPA)',
+    title: 'Bachelor in Computer Application (3.03 GPA)',
     place: 'Old Baneshwor, Kathmandu',
     description: '',
     highlights: [],
@@ -207,12 +207,12 @@ export const projectShowcase: Project[] = [
     description:
       'Configured, deployed, and automated multi-vendor networks for banks, cooperatives, government offices, and private institutions. Implemented routing, switching, firewall policies, and wireless infrastructures tailored to client requirements.',
     stack: [
-      'Cisco', 
-      'Juniper', 
-      'Huawei', 
-      'MikroTik', 
-      'Palo Alto', 
-      'Sophos', 
+      'Cisco',
+      'Juniper',
+      'Huawei',
+      'MikroTik',
+      'Palo Alto',
+      'Sophos',
       'Fortinet',
       'Ruijie APs',
       'Cambium cnPilot',
@@ -220,6 +220,35 @@ export const projectShowcase: Project[] = [
     ],
     highlight:
       'Delivered fully optimized and automated enterprise networks across diverse environments with high availability, security, and scalable wireless coverage.',
+  },
+  {
+    title: "Automated API Regression Testing Tool",
+    description:
+      "Designed and developed an API testing platform similar to Postman with integrated CI/CD validation. Implemented functionality to store baseline API responses and automatically compare them with new responses during deployment.",
+    stack: [
+      "React",
+      "Django",
+      "PostgreSQL",
+      "CI/CD"
+    ],
+    highlight:
+      "Built response comparison logic to detect unexpected API behavior changes and block faulty deployments. Developed a React-based interface for managing API collections and test cases."
+  },
+  {
+    title: "Multi-Tenant Learning Management System (LMS) – DevOps & Infrastructure",
+    description:
+      "Handled DevOps operations for a multi-tenant Learning Management System supporting guardian, student, and teacher services. Built CI/CD pipelines, containerized services, and managed asynchronous task processing and event-driven communication for scalable application operations.",
+    stack: [
+      "React",
+      "Django",
+      "PostgreSQL",
+      "Docker",
+      "GitLab CI/CD",
+      "Django Celery",
+      "Apache Kafka"
+    ],
+    highlight:
+      "Automated application deployment and background task processing using Docker, GitLab CI/CD, Celery, and Kafka to support scalable multi-tenant LMS operations."
   },
 ]
 

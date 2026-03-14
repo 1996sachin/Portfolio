@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion'
 import PageWrapper from '../components/PageWrapper'
 import { contactDetails } from '../data/content'
+import { useState } from 'react'
 
 const ContactPage = () => {
+  const [isSent, setIsSent] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState('')
   return (
     <PageWrapper
       eyebrow="Contact"
@@ -46,9 +50,39 @@ const ContactPage = () => {
         </div>
         <form
           className="contact-form"
-          onSubmit={(event) => {
+          onSubmit={async (event) => {
             event.preventDefault()
-            alert('Thanks for reaching out! I will reply shortly.')
+            const form = event.currentTarget
+            setIsSubmitting(true)
+            setError('')
+            
+            try {
+              const formData = new FormData(form)
+              const dataObj = Object.fromEntries(formData.entries());
+
+              const res = await fetch("http://localhost:5000/api/contact", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json"
+                },
+                body: JSON.stringify(dataObj)
+              })
+              const data = await res.json()
+
+              if (data.success) {
+                setIsSent(true)
+                setTimeout(() => {
+                  setIsSent(false)
+                  form.reset()
+                }, 4000)
+              } else {
+                setError(data.message || 'Something went wrong.')
+              }
+            } catch (err) {
+              setError('Failed to send message. Please try again later.')
+            } finally {
+              setIsSubmitting(false)
+            }
           }}
         >
           <p className="eyebrow">Send a note</p>
@@ -74,9 +108,20 @@ const ContactPage = () => {
               required
             />
           </label>
-          <button className="btn primary" type="submit">
-            Send message
+          <button className="btn primary" type="submit" disabled={isSubmitting || isSent}>
+            {isSubmitting ? 'Sending...' : isSent ? 'Message sent!' : 'Send message'}
           </button>
+          
+          {isSent && (
+            <p style={{ color: 'var(--text-secondary, #a1a1aa)', marginTop: '1rem', fontSize: '0.9rem' }}>
+              Thanks for reaching out! I will reply shortly.
+            </p>
+          )}
+          {error && (
+            <p style={{ color: '#ef4444', marginTop: '1rem', fontSize: '0.9rem' }}>
+              {error}
+            </p>
+          )}
         </form>
       </motion.div>
     </PageWrapper>
