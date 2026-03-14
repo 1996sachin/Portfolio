@@ -31,7 +31,11 @@ app.use('/api', limiter);
 
 // 6. CORS Options (Only allow specific domains to talk to this API)
 const corsOptions = {
-  origin: process.env.CLIENT_URL || 'http://localhost:5173', // Restrict to front-end domain
+  origin: [
+    'http://localhost:5173', // Local Development
+    'https://sachinsinghchaudhary.com.np', // Production Live Domain
+    'https://www.sachinsinghchaudhary.com.np'
+  ],
   optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
@@ -68,7 +72,5 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// Export the Express API
+module.exports = app;
