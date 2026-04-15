@@ -9,31 +9,22 @@ const rateLimit = require('express-rate-limit');
 
 const app = express();
 
-// 1. Set Security HTTP Headers (Helps mitigate XSS, Clickjacking, MIME sniffing, etc.)
 app.use(helmet());
-
-// 2. Body Parser (Reading data from body into req.body) limit payload size to prevent DOS
 app.use(express.json({ limit: '10kb' }));
-
-// 3. Data Sanitization against NoSQL query injection / XSS
 app.use(xss());
-
-// 4. Prevent Parameter Pollution
 app.use(hpp());
 
-// 5. Rate Limiting: Limit requests from same API to prevent brute-force and DoS
 const limiter = rateLimit({
-  max: 10, // Max 10 requests
-  windowMs: 60 * 60 * 1000, // Per hour
+  max: 10,
+  windowMs: 60 * 60 * 1000,
   message: 'Too many requests from this IP, please try again in an hour!'
 });
 app.use('/api', limiter);
 
-// 6. CORS Options (Only allow specific domains to talk to this API)
 const corsOptions = {
   origin: [
-    'http://localhost:5173', // Local Development
-    'https://sachinsinghchaudhary.com.np', // Production Live Domain
+    'http://localhost:5173',
+    'https://sachinsinghchaudhary.com.np',
     'https://www.sachinsinghchaudhary.com.np'
   ],
   optionsSuccessStatus: 200
@@ -57,12 +48,12 @@ app.post('/api/contact', async (req, res) => {
 
   try {
     const mailOptions = {
-        from: `"${name}" <${email}>`, // sender address
-        to: process.env.EMAIL_USER, // list of receivers
-        subject: `New Lead from Portfolio: ${name}`, // Subject line
-        text: `You have received a new message from your portfolio contact form.\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`, // plain text body
-        replyTo: email,
-    }
+      from: `"${name}" <${email}>`,
+      to: process.env.EMAIL_USER,
+      subject: `New Lead from Portfolio: ${name}`,
+      text: `You have received a new message from your portfolio contact form.\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+      replyTo: email,
+    };
 
     await transporter.sendMail(mailOptions);
     res.status(200).json({ success: true, message: 'Message sent successfully!' });
@@ -72,5 +63,4 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
-// Export the Express API
 module.exports = app;

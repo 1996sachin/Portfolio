@@ -50,6 +50,8 @@ const ContactPage = () => {
         </div>
         <form
           className="contact-form"
+          action="https://formspree.io/f/mjgjgyor"
+          method="POST"
           onSubmit={async (event) => {
             event.preventDefault()
             const form = event.currentTarget
@@ -57,26 +59,19 @@ const ContactPage = () => {
             setError('')
             
             try {
-              const formData = new FormData(form)
-              const dataObj = Object.fromEntries(formData.entries());
-
-              const res = await fetch("/api/contact", {
+              const res = await fetch(form.action, {
                 method: "POST",
-                headers: {
-                  "Content-Type": "application/json"
-                },
-                body: JSON.stringify(dataObj)
+                body: new FormData(form)
               })
-              const data = await res.json()
 
-              if (data.success) {
+              if (res.ok) {
                 setIsSent(true)
                 setTimeout(() => {
                   setIsSent(false)
                   form.reset()
                 }, 4000)
               } else {
-                setError(data.message || 'Something went wrong.')
+                setError('Failed to send message. Please try again later.')
               }
             } catch (err) {
               setError('Failed to send message. Please try again later.')

@@ -15,4 +15,4 @@ COPY . .
 EXPOSE 3000
 
 # Start app
-CMD ["pm2-runtime", "server.js"]
+CMD ["node", "server.js"]
