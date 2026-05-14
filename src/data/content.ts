@@ -92,6 +92,26 @@ export const educationTimeline: TimelineItem[] = [
 export const experienceTimeline: TimelineItem[] = [
   {
     period: 'Apr 2025 – Present',
+    title: 'DevOps Engineer/Information Security Officer',
+    place: 'Cellpay',
+    description:
+      'Lead DevOps operations and information security initiatives for payment processing systems.',
+    highlights: [
+      'Manage hybrid infrastructure combining on-premise and AWS cloud services',
+      'Administer VMware ESXi for production Linux servers with Tomcat and Nginx',
+      'Maintain multi-master Production MySQL database setup for high availability',
+      'Oversee Fortigate firewalls in HA and Cisco switches for secure connectivity',
+      'Deploy applications using AWS EC2, S3, VPC, Route 53, RDS, Load Balancing, WAF, and Lambda',
+      'Manage Windows servers including IIS and MSSQL',
+      'Monitor systems with Zabbix, Grafana, and Prometheus with proactive alerting',
+      'Ensure reliable WAN connectivity for office and production environments',
+      'Implemented CI/CD pipelines, Docker, and Kubernetes for DevOps practices',
+      'Use Terraform for AWS infrastructure provisioning',
+      'Provide IT support for office systems, network issues, and Office 365',
+    ],
+  },
+  {
+    period: 'Apr 2025 – Present',
     title: 'Junior DevOps Engineer',
     place: 'Ambition Guru',
     description:
