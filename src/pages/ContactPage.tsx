@@ -73,11 +73,10 @@ const ContactPage = () => {
               } else {
                 setError('Failed to send message. Please try again later.')
               }
-            } catch (err) {
-              setError('Failed to send message. Please try again later.')
-            } finally {
-              setIsSubmitting(false)
-            }
+             } catch (err) {
+               console.error('Form submission error:', err);
+               setError('Failed to send message. Please try again later.');
+             }
           }}
         >
           <p className="eyebrow">Send a note</p>
