@@ -91,7 +91,7 @@ export const educationTimeline: TimelineItem[] = [
 
 export const experienceTimeline: TimelineItem[] = [
   {
-    period: 'Apr 2025 – Present',
+    period: 'May 2025 – Present',
     title: 'DevOps Engineer/Information Security Officer',
     place: 'Cellpay',
     description:
