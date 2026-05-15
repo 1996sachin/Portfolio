@@ -80,13 +80,6 @@ export const educationTimeline: TimelineItem[] = [
     description: '',
     highlights: [],
   },
-  {
-    period: '2019 – 2021',
-    title: 'Intermediate (+2)',
-    place: 'Nepal Institute of Management and Science (NIMS College)',
-    description: '',
-    highlights: [],
-  },
 ]
 
 export const experienceTimeline: TimelineItem[] = [
