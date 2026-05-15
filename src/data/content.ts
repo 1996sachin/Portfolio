@@ -21,7 +21,7 @@ export type SkillCategory = {
 
 export const heroContent = {
   name: 'Sachin Singh',
-  title: 'DevOps Engineer · Network Engineer & Information Security Officer',
+  title: 'DevOps Engineer and Network Engineer & Information Security Officer',
   summary:
     'I secure SD-WAN fabrics, script operational runbooks, and keep hybrid networks ready for the next incident.',
   availability: 'Open to DevOps, NetOps, and SOC-focused opportunities.',

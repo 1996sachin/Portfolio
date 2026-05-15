@@ -45,7 +45,7 @@ const HomePage = () => {
           transition={{ delay: 0.15, duration: 0.6 }}
         >
           <img src={sachinPhoto} alt="Portrait of Sachin Singh" />
-          <p>DevOps Engineer · Network Engineer · Information Security Officer</p>
+          <p>{heroContent.title}</p>
         </motion.div>
 
         <motion.div

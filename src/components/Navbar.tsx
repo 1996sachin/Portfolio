@@ -21,7 +21,7 @@ const Navbar = () => {
     <header className="nav">
       <div className="nav-brand">
         <NavLink to="/" onClick={closeMenu}>
-          Sachin Singh Chaudhary
+          Sachin Singh
         </NavLink>
       </div>
 
