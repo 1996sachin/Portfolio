@@ -48,11 +48,11 @@ const ContactPage = () => {
             ))}
           </ul>
         </div>
-        <form
-          className="contact-form"
-          action="https://formspree.io/f/mjgjgyor"
-          method="POST"
-          onSubmit={async (event) => {
+<form
+  className="contact-form"
+  action="https://formspree.io/f/xojrorrn"
+  method="POST"
+  onSubmit={async (event) => {
             event.preventDefault()
             const form = event.currentTarget
             setIsSubmitting(true)
