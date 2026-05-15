@@ -20,8 +20,8 @@ export type SkillCategory = {
 }
 
 export const heroContent = {
-  name: 'Sachin Singh Chaudhary',
-  title: 'Network & Systems Engineer · Junior DevOps Engineer',
+  name: 'Sachin Singh',
+  title: 'DevOps Engineer · Network Engineer & Information Security Officer',
   summary:
     'I secure SD-WAN fabrics, script operational runbooks, and keep hybrid networks ready for the next incident.',
   availability: 'Open to DevOps, NetOps, and SOC-focused opportunities.',

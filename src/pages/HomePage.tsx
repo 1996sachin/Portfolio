@@ -10,7 +10,7 @@ const heroStats = [
 ]
 
 const heroNarrative = [
-  'As a dedicated Network & Systems Administrator and Junior DevOps Engineer, I have built a solid foundation in SD-WAN, EMS, automation, and secure network design. I thrive in dynamic IT environments that require both deep technical understanding and a proactive approach to cybersecurity. My experience spans network migrations, wireless surveys, infrastructure optimization, and DevOps workflow integration across leading organizations in Nepal.',
+  'As a dedicated DevOps Engineer and Network Engineer, I have built a solid foundation in SD-WAN, EMS, automation, and secure network design. I thrive in dynamic IT environments that require both deep technical understanding and a proactive approach to cybersecurity. My experience spans network migrations, wireless surveys, infrastructure optimization, and DevOps workflow integration across leading organizations in Nepal.',
   'I am passionate about building resilient infrastructures and mitigating cyber threats, backed by hands-on security operations work. With certifications like Ruijie Engineer (Senior & Junior) and Oracle Cloud Foundations Associate, I continuously upskill to stay aligned with evolving industry standards.',
 ]
 
