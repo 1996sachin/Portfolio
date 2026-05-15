@@ -44,8 +44,8 @@ const HomePage = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.15, duration: 0.6 }}
         >
-          <img src={sachinPhoto} alt="Portrait of Sachin Singh Chaudhary" />
-          <p>Network & Systems Engineer · Junior DevOps Engineer</p>
+          <img src={sachinPhoto} alt="Portrait of Sachin Singh" />
+          <p>DevOps Engineer · Network Engineer · Information Security Officer</p>
         </motion.div>
 
         <motion.div

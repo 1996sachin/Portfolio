@@ -58,26 +58,32 @@ const ContactPage = () => {
             setIsSubmitting(true)
             setError('')
             
-            try {
-              const res = await fetch(form.action, {
-                method: "POST",
-                body: new FormData(form)
-              })
+             try {
+               const res = await fetch(form.action, {
+                 method: "POST",
+                 body: new FormData(form)
+               })
+               console.log('Formspree response status:', res.status)
+               console.log('Formspree response ok:', res.ok)
 
-              if (res.ok) {
-                setIsSent(true)
-                setTimeout(() => {
-                  setIsSent(false)
-                  form.reset()
-                }, 4000)
-              } else {
-                setError('Failed to send message. Please try again later.')
-              }
+               if (res.ok) {
+                 setIsSent(true)
+                 setTimeout(() => {
+                   setIsSent(false)
+                   form.reset()
+                 }, 4000)
+               } else {
+                 setError('Failed to send message. Please try again later.')
+               }
              } catch (err) {
                console.error('Form submission error:', err);
-               setError('Failed to send message. Please try again later.');
+               setError('Failed to send message. Please try again later.')
              }
-          }}
+              } catch (err) {
+                console.error('Form submission error:', err);
+                setError('Failed to send message. Please try again later.');
+              }
+            }}
         >
           <p className="eyebrow">Send a note</p>
           <label>
