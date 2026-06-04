@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion'
 import PageWrapper from '../components/PageWrapper'
-import { skillMatrix } from '../data/content'
+import { usePortfolioContent } from '../context/ContentContext'
 
 const SkillsPage = () => {
+  const {
+    content: { skillMatrix },
+  } = usePortfolioContent()
+
   return (
     <PageWrapper
       eyebrow="Skills"
@@ -31,4 +35,3 @@ const SkillsPage = () => {
 }
 
 export default SkillsPage
-

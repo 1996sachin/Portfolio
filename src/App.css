@@ -556,6 +556,133 @@
   outline: 2px solid var(--accent);
 }
 
+.admin-shell {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.admin-panel {
+  border: 1px solid var(--outline);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  padding: 1.25rem;
+}
+
+.admin-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: sticky;
+  top: 7rem;
+}
+
+.admin-sidebar label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.admin-sidebar input,
+.json-editor {
+  border: 1px solid var(--outline);
+  border-radius: var(--radius-sm);
+  background: rgba(5, 6, 12, 0.8);
+  color: #fff;
+}
+
+.admin-sidebar input {
+  padding: 0.75rem;
+}
+
+.admin-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.admin-tabs button {
+  border: 1px solid var(--outline);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font: inherit;
+  padding: 0.7rem 0.85rem;
+  text-align: left;
+}
+
+.admin-tabs button:hover,
+.admin-tabs button.active {
+  background: rgba(140, 123, 255, 0.12);
+  color: #fff;
+}
+
+.admin-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.admin-editor-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.admin-editor-head h2 {
+  margin: 0.25rem 0 0;
+}
+
+.admin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.json-editor {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  min-height: 560px;
+  padding: 1rem;
+  resize: vertical;
+  width: 100%;
+}
+
+.admin-muted,
+.admin-warning,
+.admin-success,
+.admin-error {
+  border-radius: var(--radius-sm);
+  margin: 0;
+  padding: 0.8rem 1rem;
+}
+
+.admin-muted {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-muted);
+}
+
+.admin-warning {
+  background: rgba(255, 193, 7, 0.12);
+  color: #ffd166;
+}
+
+.admin-success {
+  background: rgba(53, 219, 192, 0.12);
+  color: var(--accent-secondary);
+}
+
+.admin-error {
+  background: rgba(239, 68, 68, 0.14);
+  color: #fca5a5;
+}
+
 .footer {
   border: 1px solid var(--outline);
   border-radius: var(--radius-lg);
@@ -595,6 +722,14 @@
   .nav-links.open {
     max-height: 500px;
   }
+
+  .admin-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-sidebar {
+    position: static;
+  }
 }
 
 @media (max-width: 640px) {
@@ -606,4 +741,3 @@
     padding: 1.5rem;
   }
 }
-

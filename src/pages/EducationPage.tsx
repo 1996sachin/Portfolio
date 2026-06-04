@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion'
 import PageWrapper from '../components/PageWrapper'
-import { educationTimeline } from '../data/content'
+import { usePortfolioContent } from '../context/ContentContext'
 
 const EducationPage = () => {
+  const {
+    content: { educationTimeline },
+  } = usePortfolioContent()
+
   return (
     <PageWrapper
       eyebrow="Education"
@@ -38,4 +42,3 @@ const EducationPage = () => {
 }
 
 export default EducationPage
-

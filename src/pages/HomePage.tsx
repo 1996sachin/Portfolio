@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import sachinPhoto from '../assets/Sachin.jpg'
-import { heroContent, projectShowcase, skillMatrix } from '../data/content'
+import { usePortfolioContent } from '../context/ContentContext'
 
 const heroStats = [
   { label: 'Networks Secured', value: '25+' },
@@ -15,6 +15,10 @@ const heroNarrative = [
 ]
 
 const HomePage = () => {
+  const {
+    content: { heroContent, projectShowcase, skillMatrix },
+  } = usePortfolioContent()
+
   return (
     <section className="page">
       <motion.div
@@ -161,4 +165,3 @@ const HomePage = () => {
 }
 
 export default HomePage
-

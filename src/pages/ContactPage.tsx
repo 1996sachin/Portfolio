@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion'
 import PageWrapper from '../components/PageWrapper'
-import { contactDetails } from '../data/content'
+import { usePortfolioContent } from '../context/ContentContext'
 import { useState } from 'react'
 
 const ContactPage = () => {
+  const {
+    content: { contactDetails },
+  } = usePortfolioContent()
   const [isSent, setIsSent] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState('')

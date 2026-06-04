@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion'
 import PageWrapper from '../components/PageWrapper'
-import { experienceTimeline } from '../data/content'
+import { usePortfolioContent } from '../context/ContentContext'
 
 const ExperiencePage = () => {
+  const {
+    content: { experienceTimeline },
+  } = usePortfolioContent()
+
   return (
     <PageWrapper
       eyebrow="Experience"
@@ -39,4 +43,3 @@ From Dockerized cloud applications to multi-vendor network deployments, I build 
 }
 
 export default ExperiencePage
-

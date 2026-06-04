@@ -19,6 +19,56 @@ export type SkillCategory = {
   skills: string[]
 }
 
+export type HeroContent = {
+  name: string
+  title: string
+  summary: string
+  availability: string
+  primaryCta: {
+    label: string
+    href: string
+  }
+  secondaryCta: {
+    label: string
+    href: string
+  }
+}
+
+export type AboutHighlight = {
+  label: string
+  value: string
+}
+
+export type Narrative = {
+  intro: string
+  pillars: {
+    title: string
+    detail: string
+  }[]
+}
+
+export type ContactDetails = {
+  email: string
+  phone: string
+  location: string
+  availabilityNote: string
+  socials: {
+    label: string
+    href: string
+  }[]
+}
+
+export type PortfolioContent = {
+  heroContent: HeroContent
+  aboutHighlights: AboutHighlight[]
+  narrative: Narrative
+  educationTimeline: TimelineItem[]
+  experienceTimeline: TimelineItem[]
+  projectShowcase: Project[]
+  skillMatrix: SkillCategory[]
+  contactDetails: ContactDetails
+}
+
 export const heroContent = {
   name: 'Sachin Singh',
   title: 'Devops Engineer & Information Security officer',
@@ -311,4 +361,15 @@ export const contactDetails = {
     },
     { label: 'GitHub', href: 'https://github.com/1996sachin' },
   ],
+}
+
+export const defaultPortfolioContent: PortfolioContent = {
+  heroContent,
+  aboutHighlights,
+  narrative,
+  educationTimeline,
+  experienceTimeline,
+  projectShowcase,
+  skillMatrix,
+  contactDetails,
 }

@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion'
 import PageWrapper from '../components/PageWrapper'
-import { projectShowcase } from '../data/content'
+import { usePortfolioContent } from '../context/ContentContext'
 
 const ProjectsPage = () => {
+  const {
+    content: { projectShowcase },
+  } = usePortfolioContent()
+
   return (
     <PageWrapper
       eyebrow="Projects"
@@ -40,4 +44,3 @@ const ProjectsPage = () => {
 }
 
 export default ProjectsPage
-

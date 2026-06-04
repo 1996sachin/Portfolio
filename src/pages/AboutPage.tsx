@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion'
 import PageWrapper from '../components/PageWrapper'
-import { aboutHighlights, narrative } from '../data/content'
+import { usePortfolioContent } from '../context/ContentContext'
 
 const AboutPage = () => {
+  const {
+    content: { aboutHighlights, narrative },
+  } = usePortfolioContent()
+
   return (
     <PageWrapper
       title="I blend DevOps practices, infrastructure automation, and secure system design."
@@ -41,4 +45,3 @@ const AboutPage = () => {
 }
 
 export default AboutPage
-

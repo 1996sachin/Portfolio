@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Layout from './components/Layout'
+import AdminPage from './pages/AdminPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import EducationPage from './pages/EducationPage'
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/skills" element={<SkillsPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/admin" element={<AdminPage />} />
       </Route>
     </Routes>
   )
