@@ -125,23 +125,14 @@ export const experienceTimeline: TimelineItem[] = [
   {
     period: 'Apr 2025 – May 2026',
     title: 'Network Administrator',
-    place: 'Ambition Guru',
+    place: 'Ambition Guru Corporate Office and College/Institute',
     description:
-      'Safeguard enterprise connectivity and enforce cybersecurity controls.',
+      'Safeguarded corporate office and college/institute LAN/WAN, Wi-Fi, and IT support operations.',
     highlights: [
       'Configured firewalls, routers, and switches for secure and efficient connectivity.',
       'Optimized network performance and firewall/router configurations',
       'Automated backups, monitoring, and deployments',
       'Ran vulnerability assessments, patching, and executive reporting',
-    ],
-  },
-  {
-    period: 'Apr 2025 – May 2026',
-    title: 'Network Administrator',
-    place: 'Ambition Guru College',
-    description:
-      'Manage campus LAN/WAN, Wi-Fi, and student/staff support operations.',
-    highlights: [
       'Maintained documentation, inventories, and academic IT services',
       'Assisted faculty and students with IT support, troubleshooting, and account management.',
       'Handled lab setups, security controls, and classroom readiness',
