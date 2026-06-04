@@ -146,4 +146,13 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
+// Serve static files from the 'dist' directory
+const distPath = path.join(__dirname, '..', 'dist');
+app.use(express.static(distPath));
+
+// Fallback for SPA: serve index.html for any unknown routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(distPath, 'index.html'));
+});
+
 export default app;
