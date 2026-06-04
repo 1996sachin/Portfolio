@@ -3,7 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import nodemailer from 'nodemailer';
 import helmet from 'helmet';
-import xss from 'xss-clean';
+import { xss } from 'express-xss-sanitizer';
 import hpp from 'hpp';
 import rateLimit from 'express-rate-limit';
 import fs from 'fs/promises';
