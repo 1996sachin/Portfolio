@@ -151,8 +151,13 @@ const distPath = path.join(__dirname, '..', 'dist');
 app.use(express.static(distPath));
 
 // Fallback for SPA: serve index.html for any unknown routes
-app.get('(.*)', (req, res) => {
-  res.sendFile(path.join(distPath, 'index.html'));
+app.get('*splat', (req, res) => {
+  const indexPath = path.join(distPath, 'index.html');
+  res.sendFile(indexPath, (err) => {
+    if (err) {
+      res.status(404).json({ success: false, message: 'API route not found' });
+    }
+  });
 });
 
 export default app;
