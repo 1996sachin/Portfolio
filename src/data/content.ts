@@ -21,7 +21,7 @@ export type SkillCategory = {
 
 export const heroContent = {
   name: 'Sachin Singh',
-  title: 'DevOps Engineer and Network Engineer & Information Security Officer',
+  title: 'Devops Engineer & Information Security officer',
   summary:
     'I secure SD-WAN fabrics, script operational runbooks, and keep hybrid networks ready for the next incident.',
   availability: 'Open to DevOps, NetOps, and SOC-focused opportunities.',
@@ -74,8 +74,8 @@ export const narrative = {
 
 export const educationTimeline: TimelineItem[] = [
   {
-    period: '2021 – 2025',
-    title: 'Bachelor in Computer Application (3.03 GPA)',
+    period: '2020-2024',
+    title: 'Bachelor in Computer Application (3.05 GPA)',
     place: 'Old Baneshwor, Kathmandu',
     description: '',
     highlights: [],
@@ -321,4 +321,3 @@ export const contactDetails = {
     { label: 'GitHub', href: 'https://github.com/1996sachin' },
   ],
 }
-
