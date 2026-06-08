@@ -1,6 +1,26 @@
 import { motion } from 'framer-motion'
 import PageWrapper from '../components/PageWrapper'
 import { usePortfolioContent } from '../context/ContentContext'
+import TiltCard from '../components/TiltCard'
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+} as const
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { type: 'spring', stiffness: 80, damping: 15 },
+  },
+} as const
 
 const AboutPage = () => {
   const {
@@ -15,30 +35,36 @@ const AboutPage = () => {
     >
       <motion.section
         className="about-grid"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
-        <div className="about-card">
-          <p className="eyebrow">Guiding beliefs</p>
-          <ul>
-            {aboutHighlights.map((item) => (
-              <li key={item.label}>
-                <span>{item.label}</span>
-                <p>{item.value}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <motion.div variants={itemVariants}>
+          <TiltCard className="about-card" intensity={5}>
+            <p className="eyebrow">Guiding beliefs</p>
+            <ul>
+              {aboutHighlights.map((item) => (
+                <li key={item.label}>
+                  <span>{item.label}</span>
+                  <p>{item.value}</p>
+                </li>
+              ))}
+            </ul>
+          </TiltCard>
+        </motion.div>
 
-        <div className="about-pillars">
-          {narrative.pillars.map((pillar) => (
-            <article key={pillar.title}>
-              <h3>{pillar.title}</h3>
-              <p>{pillar.detail}</p>
-            </article>
+        <motion.div className="about-pillars" variants={itemVariants}>
+          {narrative.pillars.map((pillar, idx) => (
+            <TiltCard key={pillar.title} className="about-pillar-card" intensity={7}>
+              <article>
+                <h3>
+                  <span className="pillar-num">0{idx + 1}</span> {pillar.title}
+                </h3>
+                <p>{pillar.detail}</p>
+              </article>
+            </TiltCard>
           ))}
-        </div>
+        </motion.div>
       </motion.section>
     </PageWrapper>
   )

@@ -2,17 +2,45 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import sachinPhoto from '../assets/Sachin.jpg'
 import { usePortfolioContent } from '../context/ContentContext'
+import TiltCard from '../components/TiltCard'
 
 const heroStats = [
-  { label: 'Networks Secured', value: '25+' },
-  { label: 'Deployments Automated', value: '30+' },
+  { label: 'Production Servers Managed', value: '30+' },
+  { label: 'Deployments Automated', value: '50+' },
   { label: 'Certifications', value: '6' },
 ]
 
 const heroNarrative = [
-  'As a dedicated DevOps Engineer and Network Engineer, I have built a solid foundation in SD-WAN, EMS, automation, and secure network design. I thrive in dynamic IT environments that require both deep technical understanding and a proactive approach to cybersecurity. My experience spans network migrations, wireless surveys, infrastructure optimization, and DevOps workflow integration across leading organizations in Nepal.',
-  'I am passionate about building resilient infrastructures and mitigating cyber threats, backed by hands-on security operations work. With certifications like Ruijie Engineer (Senior & Junior) and Oracle Cloud Foundations Associate, I continuously upskill to stay aligned with evolving industry standards.',
+  'As a DevOps & Systems Engineer and Information Security practitioner, I focus on the critical intersection of automated deployment pipelines, resilient infrastructure, and proactive security controls. I build, monitor, and harden systems from bare-metal iDRAC-managed servers to AWS cloud to protect production environments and ensure payment-grade reliability.',
+  'My daily work spans Fortinet firewalls and FortiSwitch management, Linux server administration across Ubuntu, CentOS, and RHEL, AWS infrastructure including VPC, WAF, EC2, S3, Route 53, RDS, and IAM, L2 IPSec VPN tunnels, Zabbix monitoring, and Jenkins-driven CI/CD pipelines. Every layer from physical hardware to cloud edge is something I own, tune, and secure.',
+  'I am passionate about eliminating manual operational toil while mitigating cyber threats through infrastructure hardening, threat analysis, and self-healing cloud design. Bridging the gap between speed and security is my primary mission.',
 ]
+
+const marqueeItems = [
+  'Fortinet Firewall', 'FortiSwitch', 'AWS VPC', 'AWS WAF',
+  'EC2 & RDS', 'S3 & Route 53', 'IAM Security', 'Jenkins CI/CD',
+  'Ubuntu & CentOS', 'RHEL Server', 'L2 IPSec VPN', 'Zabbix Monitoring',
+  'iDRAC Management', 'On-Premises Servers', 'Docker & Kubernetes', 'Terraform',
+]
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+} as const
+
+const itemVariants = {
+  hidden: { y: 24, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { type: 'spring', stiffness: 80, damping: 15 },
+  },
+} as const
 
 const HomePage = () => {
   const {
@@ -20,147 +48,165 @@ const HomePage = () => {
   } = usePortfolioContent()
 
   return (
-    <section className="page">
-      <motion.div
-        className="hero-grid"
-        initial={{ opacity: 0, y: 32 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
-      >
+    <motion.section
+      className="page"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.div className="hero-grid" variants={itemVariants}>
         <div className="hero-copy">
-          <p className="eyebrow">Hello, I’m {heroContent.name}</p>
-          <h1>{heroContent.title}</h1>
+          <div className="hero-deco-text">SECURE</div>
+          
+          <p className="eyebrow-tech">{heroContent.title}</p>
+          
+          <h1 className="hero-main-title">
+            <span className="block-text">Sachin</span>
+            <span className="block-text italic-accent">Singh</span>
+          </h1>
+
           <p className="lede">{heroContent.summary}</p>
+          
           <div className="hero-cta">
-            <Link className="btn primary" to={heroContent.primaryCta.href}>
-              {heroContent.primaryCta.label}
+            <Link className="btn primary animate-btn" to={heroContent.primaryCta.href}>
+              {heroContent.primaryCta.label} <span>→</span>
             </Link>
-            <Link className="btn ghost" to={heroContent.secondaryCta.href}>
+            <Link className="btn ghost animate-btn" to={heroContent.secondaryCta.href}>
               {heroContent.secondaryCta.label}
             </Link>
           </div>
-          <p className="availability">{heroContent.availability}</p>
+          
+          <p className="availability">
+            <span className="status-indicator"></span> {heroContent.availability}
+          </p>
         </div>
 
         <motion.div
-          className="hero-photo-card"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.15, duration: 0.6 }}
+          className="hero-photo-container"
+          variants={itemVariants}
         >
-          <img src={sachinPhoto} alt="Portrait of Sachin Singh" />
-          <p>{heroContent.title}</p>
+          <TiltCard className="hero-photo-card" intensity={15}>
+            <img src={sachinPhoto} alt="Portrait of Sachin Singh" />
+            <p>DevOps &amp; System Engineer</p>
+          </TiltCard>
         </motion.div>
 
         <motion.div
-          className="hero-card"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
+          className="hero-card-container"
+          variants={itemVariants}
         >
-          <p className="eyebrow">Impact pulse</p>
-          <ul>
-            {heroStats.map((stat) => (
-              <li key={stat.label}>
-                <span>{stat.value}</span>
-                <p>{stat.label}</p>
-              </li>
-            ))}
-          </ul>
-          <div className="hero-card-footer">
-            <p>Focused on resilient infrastructure, DevOps automation, and SOC readiness.</p>
-          </div>
+          <TiltCard className="hero-card" intensity={8}>
+            <p className="eyebrow">Impact pulse</p>
+            <ul>
+              {heroStats.map((stat) => (
+                <li key={stat.label}>
+                  <span>{stat.value}</span>
+                  <p>{stat.label}</p>
+                </li>
+              ))}
+            </ul>
+            <div className="hero-card-footer">
+              <p>Hybrid infrastructure, cloud automation, and security hardening.</p>
+            </div>
+          </TiltCard>
         </motion.div>
       </motion.div>
 
-      <motion.section
-        className="hero-narrative"
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
+      {/* Infinite Scrolling Marquee */}
+      <motion.div className="skills-marquee-wrapper" variants={itemVariants}>
+        <div className="skills-marquee">
+          {[...marqueeItems, ...marqueeItems].map((item, idx) => (
+            <span key={idx} className="marquee-item">
+              {item}
+              <span className="marquee-dot"></span>
+            </span>
+          ))}
+        </div>
+      </motion.div>
+
+      <motion.section className="hero-narrative" variants={itemVariants}>
         <h2>Why I build</h2>
         {heroNarrative.map((text) => (
           <p key={text}>{text}</p>
         ))}
       </motion.section>
 
-      <motion.div
-        className="quick-links"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4 }}
-      >
+      <motion.div className="quick-links" variants={itemVariants}>
         {[
           { title: 'About', description: 'Mindset, certifications, and passions', to: '/about' },
           { title: 'Experience', description: 'DevOps, SOC, and network leadership', to: '/experience' },
           { title: 'Projects', description: 'Automation and monitoring labs', to: '/projects' },
         ].map((card) => (
-          <Link key={card.to} to={card.to} className="quick-card">
-            <h3>{card.title}</h3>
-            <p>{card.description}</p>
-            <span>Explore →</span>
+          <Link key={card.to} to={card.to} className="quick-card-link">
+            <TiltCard className="quick-card" intensity={12}>
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+              <span>Explore →</span>
+            </TiltCard>
           </Link>
         ))}
       </motion.div>
 
       <motion.section
         className="preview-section"
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        variants={itemVariants}
       >
         <div className="section-heading">
           <p className="eyebrow">Selected builds</p>
           <h2>Recent projects that ship delight with rigor</h2>
         </div>
-        <div className="project-grid">
-          {projectShowcase.map((project) => (
-            <article key={project.title} className="project-card">
-              <div className="project-card-head">
+        <div className="project-list-vertical">
+          {projectShowcase.slice(0, 3).map((project, idx) => (
+            <a
+              key={project.title}
+              href={project.link || '#'}
+              target={project.link ? '_blank' : undefined}
+              rel="noreferrer"
+              className="project-item-row"
+            >
+              <span className="project-num">0{idx + 1}</span>
+              <div className="project-row-copy">
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
               </div>
-              <p className="project-highlight">{project.highlight}</p>
-              <div className="tag-row">
-                {project.stack.map((tag) => (
-                  <span key={tag}>{tag}</span>
+              <div className="project-row-tags">
+                {project.stack.slice(0, 3).map((tag) => (
+                  <span key={tag} className="tech-badge">{tag}</span>
                 ))}
               </div>
-              {project.link && (
-                <a href={project.link} target="_blank" rel="noreferrer">
-                  View case study →
-                </a>
-              )}
-            </article>
+              <span className="project-arrow-icon">↗</span>
+            </a>
           ))}
+        </div>
+        <div className="view-more-container">
+          <Link className="btn ghost view-all-btn" to="/projects">
+            View All Projects
+          </Link>
         </div>
       </motion.section>
 
       <motion.section
         className="preview-section"
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
+        variants={itemVariants}
       >
         <div className="section-heading">
           <p className="eyebrow">Skills stack</p>
-          <h2>Blending design systems, data, and collaborative leadership.</h2>
+          <h2>Blending infrastructure, security, and DevOps automation.</h2>
         </div>
         <div className="skill-grid">
           {skillMatrix.slice(0, 3).map((category) => (
-            <article key={category.title} className="skill-card">
+            <TiltCard key={category.title} className="skill-card" intensity={6}>
               <h3>{category.title}</h3>
               <ul>
                 {category.skills.map((skill) => (
                   <li key={skill}>{skill}</li>
                 ))}
               </ul>
-            </article>
+            </TiltCard>
           ))}
         </div>
       </motion.section>
-    </section>
+    </motion.section>
   )
 }
 

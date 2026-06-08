@@ -11,6 +11,9 @@ RUN npm install
 # Copy app source
 COPY . .
 
+# Build Vite static assets
+RUN npm run build
+
 # Expose app port
 EXPOSE 3000
 

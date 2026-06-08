@@ -4,8 +4,9 @@ export type TimelineItem = {
   place: string
   description: string
   highlights: string[]
+  College?: string
 }
-
+ 
 export type Project = {
   title: string
   description: string
@@ -13,12 +14,12 @@ export type Project = {
   link?: string
   highlight: string
 }
-
+ 
 export type SkillCategory = {
   title: string
   skills: string[]
 }
-
+ 
 export type HeroContent = {
   name: string
   title: string
@@ -33,12 +34,12 @@ export type HeroContent = {
     href: string
   }
 }
-
+ 
 export type AboutHighlight = {
   label: string
   value: string
 }
-
+ 
 export type Narrative = {
   intro: string
   pillars: {
@@ -46,7 +47,7 @@ export type Narrative = {
     detail: string
   }[]
 }
-
+ 
 export type ContactDetails = {
   email: string
   phone: string
@@ -57,7 +58,7 @@ export type ContactDetails = {
     href: string
   }[]
 }
-
+ 
 export type PortfolioContent = {
   heroContent: HeroContent
   aboutHighlights: AboutHighlight[]
@@ -68,95 +69,95 @@ export type PortfolioContent = {
   skillMatrix: SkillCategory[]
   contactDetails: ContactDetails
 }
-
+ 
 export const heroContent = {
   name: 'Sachin Singh',
-  title: 'Devops Engineer & Information Security officer',
+  title: 'DevOps & Systems Engineer',
   summary:
-    'I secure SD-WAN fabrics, script operational runbooks, and keep hybrid networks ready for the next incident.',
-  availability: 'Open to DevOps, NetOps, and SOC-focused opportunities.',
+    'I manage hybrid infrastructure, harden production systems, and automate everything in between from bare-metal servers to AWS cloud.',
+  availability: 'Open to DevOps, Cloud Infrastructure, and Security-focused opportunities.',
   primaryCta: { label: 'View Experience', href: '/experience' },
   secondaryCta: { label: 'Get in touch', href: '/contact' },
 }
-
+ 
 export const aboutHighlights = [
   {
     label: 'Focus',
     value:
-      'Build automation-driven network operations with proactive security.',
+      'Production-grade hybrid infrastructure, cloud automation, and proactive security hardening.',
   },
   {
     label: 'Experience',
     value:
-      'Hands-on with SD-WAN, EMS, CI/CD, SOC analysis, and infrastructure hardening.',
+      'Hands-on with Fortinet firewalls, AWS cloud, CI/CD pipelines, Kubernetes, and on-premises server administration.',
   },
   {
     label: 'Certifications',
-    value: 'Ruijie Engineer (Senior & Junior), Oracle Cloud Foundations Associate.',
+    value: 'Fortinet Certified Associate, FortiGate 7.4 Operator, Cisco Network Support & Security, NDG Linux Unhatched, Windows Server 2022.',
   },
   {
     label: 'Interests',
-    value: 'DevOps workflows, cybersecurity trends, and resilient infrastructure.',
+    value: 'DevOps automation, infrastructure security, cloud architecture, and open-source tooling.',
   },
 ]
-
+ 
 export const narrative = {
   intro:
-    'I thrive in fast-moving IT environments where network reliability, automation, and cybersecurity intersect. From enterprise SD-WAN rollouts to SOC mentorships, I pair hands-on engineering with disciplined incident response.',
+    'I thrive in environments where infrastructure reliability, automation, and security are non-negotiable. From managing Fortigate firewalls in active-passive HA to provisioning AWS environments with Terraform, I own the full stack — physical hardware to cloud edge.',
   pillars: [
     {
       title: 'Operational Reliability',
       detail:
-        'Design and monitor LAN/WAN infrastructures, enforce HA, and ensure networks stay resilient during migrations.',
+        'Design and maintain hybrid LAN/WAN infrastructures, enforce high availability across Fortigate HA and MySQL replication clusters, and ensure production systems stay resilient under load.',
     },
     {
       title: 'Automation & DevOps',
       detail:
-        'Build CI/CD pipelines, containerize workloads, and script routine operations to reduce toil and standardize environments.',
+        'Build CI/CD pipelines with Jenkins and GitHub Actions, containerise workloads with Docker and Kubernetes, and provision cloud infrastructure with Terraform to eliminate manual toil.',
     },
     {
       title: 'Security-First Mindset',
       detail:
-        'Respond to threats, harden systems, and drive SOC processes that surface actionable intelligence quickly.',
+        'Harden systems at every layer — AWS WAF, Fortigate policies, IAM controls, Wazuh EDR, and Zabbix alerting — to detect and respond before incidents escalate.',
     },
   ],
 }
-
+ 
 export const educationTimeline: TimelineItem[] = [
   {
-    period: '2020-2024',
-    title: 'Bachelor in Computer Application (3.05 GPA)',
+    period: '2021 – 2025',
+    title: 'Bachelor in Computer Application (GPA: 3.05)',
     place: 'Old Baneshwor, Kathmandu',
+    College: 'Thames International College, affiliated with Tribhuvan University',
     description: '',
     highlights: [],
   },
   {
-    period: '',
+    period: '2019 – 2021',
     title: 'Intermediate (+2)',
     place: 'Nepal Institute of Management and Science (NIMS College)',
     description: '',
     highlights: [],
   },
 ]
-
+ 
 export const experienceTimeline: TimelineItem[] = [
   {
     period: 'May 2026 – Present',
-    title: 'DevOps Engineer/Information Security Officer',
-    place: 'Cellpay',
+    title: 'DevOps & Systems Engineer',
+    place: 'Cell Pay (Cellcom Pvt. Ltd.)',
     description:
-      'Lead DevOps operations and information security initiatives for payment processing systems.',
+      'Assumed full ownership of production hybrid infrastructure spanning on-premise VMware and AWS cloud for payment-grade reliability.',
     highlights: [
-      'Manage hybrid infrastructure combining on-premise and AWS cloud services',
-      'Administer VMware ESXi for production Linux servers with Tomcat and Nginx',
-      'Maintain multi-master Production MySQL database setup for high availability',
-      'Oversee Fortigate firewalls in HA and Cisco switches for secure connectivity',
-      'Deploy applications using AWS EC2, S3, VPC, Route 53, RDS, Load Balancing, WAF, and Lambda',
-      'Manage Windows servers including IIS and MSSQL',
-      'Monitor systems with Zabbix, Grafana, and Prometheus with proactive alerting',
-      'Ensure reliable WAN connectivity for office and production environments',
-      'Implemented CI/CD pipelines, Docker for DevOps practices',
-      'Provide IT support for office systems, network issues, and Office 365',
+      'Manage hybrid infrastructure — VMware ESXi on-premise and AWS cloud — running production Linux servers with Nginx and Apache Tomcat',
+      'Administer multi-master MySQL replication cluster ensuring high availability and failover readiness under production load',
+      'Manage Fortigate firewalls in active-passive HA and Cisco switches — maintaining policies, VPN tunnels, VLAN segmentation, and WAN connectivity',
+      'Provision and operate AWS infrastructure: EC2, VPC, RDS, S3, Route 53, and ELB using Terraform for infrastructure-as-code',
+      'Automate operational workflows with AWS Lambda and enforce application security through AWS WAF',
+      'Build and maintain CI/CD pipelines with Docker and Kubernetes for containerised deployments',
+      'Operate unified observability stack — Zabbix, Prometheus, and Grafana — with proactive alerting for critical production events',
+      'Administer Windows Server environments including IIS and MSSQL databases',
+      'Manage Microsoft 365 tenancy and provide IT support for office systems',
     ],
   },
   {
@@ -164,41 +165,39 @@ export const experienceTimeline: TimelineItem[] = [
     title: 'Junior DevOps Engineer',
     place: 'Ambition Guru',
     description:
-      'Automate deployments, monitor multi-cloud workloads, and streamline team workflows.',
+      'Automated deployments, monitored infrastructure performance, and streamlined team workflows.',
     highlights: [
-      'Monitored cloud infrastructure (AWS/Azure) and application performance, ensuring HA.',
-      'Managed Jenkins/GitHub Actions CI/CD pipelines for application releases',
-      'Automated admin tasks with Bash/Python and hardened infra policies',
-      'Partner with QA/Dev to enforce best practices and observability',
+      'Built and maintained CI/CD pipelines using Jenkins and GitHub Actions to automate application deployments',
+      'Monitored infrastructure performance with Zabbix, Grafana, and Prometheus with custom alerting rules',
+      'Streamed and processed logs in real time using Apache Kafka for observability and analysis',
+      'Deployed Wazuh EDR for endpoint security monitoring and threat detection',
+      'Automated server tasks, backups, and scheduled jobs using Bash, Python, and Django Celery',
     ],
   },
   {
     period: 'Apr 2025 – May 2026',
     title: 'Network Administrator',
-    place: 'Ambition Guru Corporate Office and College/Institute',
+    place: 'Ambition Guru College',
     description:
-      'Safeguarded corporate office and college/institute LAN/WAN, Wi-Fi, and IT support operations.',
+      'Managed campus-wide network infrastructure and IT operations for academic and corporate environments.',
     highlights: [
-      'Configured firewalls, routers, and switches for secure and efficient connectivity.',
-      'Optimized network performance and firewall/router configurations',
-      'Automated backups, monitoring, and deployments',
-      'Ran vulnerability assessments, patching, and executive reporting',
-      'Maintained documentation, inventories, and academic IT services',
-      'Assisted faculty and students with IT support, troubleshooting, and account management.',
-      'Handled lab setups, security controls, and classroom readiness',
+      'Managed campus-wide LAN, WAN, and Wi-Fi networks ensuring uninterrupted academic operations',
+      'Configured Sophos firewalls, VLAN segmentation, routing, and switch stacking for secure connectivity',
+      'Performed capacity planning, vulnerability assessments, and security hardening',
+      'Maintained network documentation, lab usage reports, and system inventories',
+      'Provided IT support to faculty and students for hardware, software, and network issues',
     ],
   },
   {
     period: 'Mar 2025 – Apr 2025',
-    title: 'SOC Mentorship Program',
+    title: 'SOC Analyst Intern',
     place: 'Vairav Tech',
     description:
-      'Hands-on incident response and security operations training.',
+      'Hands-on security operations training covering incident response, threat detection, and digital forensics.',
     highlights: [
-      'Investigated SIEM alerts and malware events',
-      'Monitors and analyzes security events using SIEM tools.',
-      'Supported digital forensics and vulnerability assessments',
-      'Conducts vulnerability assessments and implements defensive measures.',
+      'Monitored and analysed security events using SIEM tools and investigated malware threats',
+      'Supported digital forensics, incident response, and vulnerability assessment activities',
+      'Conducted vulnerability assessments and implemented defensive security measures',
     ],
   },
   {
@@ -206,154 +205,119 @@ export const experienceTimeline: TimelineItem[] = [
     title: 'Network Engineer',
     place: 'Neology Next Pvt. Ltd.',
     description:
-      'Delivered backbone architecture and device migrations for banks and MFIs.',
+      'Delivered backbone network architecture and device migrations for banking and micro-finance institutions.',
     highlights: [
-      'Designed, planned, and deployed network architecture / backbone networks for various sectors.',
-      'Execute device migrations for commercial banks and micro-finance institutions.',
-      'Specialized in Fortinet, Juniper, Ruijie, and Cisco solutions',
-      'Provided remote support and security integrations',
+      'Designed and deployed network backbones for banking and micro-finance institutions',
+      'Implemented Fortinet, Juniper, Cisco, and Ruijie solutions for routing, switching, and security',
+      'Executed device migrations with minimal downtime and provided L2/L3 remote troubleshooting',
     ],
   },
   {
     period: 'Jun 2023 – Nov 2024',
-    title: 'Senior Assistant',
+    title: 'Senior Assistant — NOC',
     place: 'WorldLink Communications',
     description:
-      'Monitored large-scale customer circuits and core networking equipment.',
+      'Monitored large-scale enterprise circuits and core networking equipment in a 24/7 NOC environment.',
     highlights: [
-      'Monitored customer and distribution circuits for connectivity and issue detection.',
-      'Monitoring IPLC and uplink bandwidth for optimal network performance.',
-      'Configured routers, firewalls, and IPLC links',
-      'Troubleshot mail/web servers and tracked capacity',
+      'Monitored IPLC links, uplink bandwidth, and distribution circuits for enterprise clients',
+      'Configured routers, switches, and firewalls and ensured SLA compliance through proactive monitoring',
+      'Troubleshot mail and web server issues and tracked network device utilisation metrics',
     ],
   },
 ]
-
+ 
 export const projectShowcase: Project[] = [
+  {
+    title: 'VPN Monitor Dashboard',
+    description:
+      'Full-stack production monitoring dashboard for VPN infrastructure built with Django and React. Automated scheduling runs Sunday–Thursday with real-time alerting and status tracking.',
+    stack: ['Django', 'React', 'Zabbix', 'Vite', 'Tailwind CSS'],
+    highlight:
+      'Automated start/stop scheduling via cron with live monitoring and proactive alerting.',
+  },
   {
     title: 'Automated Log Monitoring & Alerting',
     description:
-      'Centralized Syslog collection with parsing, filtering, and Gmail SMTP email alerts for critical events.',
+      'Centralised Syslog collection with parsing, filtering, and Gmail SMTP email alerts for critical firewall and network events.',
     stack: ['Python', 'Bash', 'Cron', 'Syslog', 'Gmail SMTP'],
     highlight:
-      'Boosted visibility into network/firewall activity with zero manual effort.',
+      'Boosted visibility into network and firewall activity with zero manual effort.',
   },
   {
-    title: 'ELK Stack Logging Lab',
+    title: 'ELK Stack Centralised Logging',
     description:
-      'Deployed Elasticsearch, Logstash, and Kibana on Kali Linux to aggregate and visualize system telemetry.',
-    stack: ['ELK Stack', 'Logstash', 'Kibana', 'Syslog'],
+      'Deployed Elasticsearch, Logstash, and Kibana to aggregate and visualise system telemetry and security events in real time.',
+    stack: ['Elasticsearch', 'Logstash', 'Kibana', 'Syslog'],
     highlight:
-      'Enabled real-time monitoring dashboards that accelerated troubleshooting.',
-  },
-  {
-    title: 'Job Vacancy Web Scraper',
-    description:
-      'Automated daily scraping of vacancy portals and mailed Excel reports of new listings.',
-    stack: ['Python', 'BeautifulSoup', 'Requests', 'Crontab'],
-    highlight:
-      'Reduced manual search time by automating notifications for target roles.',
+      'Enabled real-time monitoring dashboards that accelerated troubleshooting time significantly.',
   },
   {
     title: 'CI/CD Deployment & Monitoring Stack',
     description:
-      'Automated deployment of Node.js and Laravel applications on AWS EC2 using Docker, Docker Compose, and Jenkins, with integrated Prometheus and Grafana for real-time monitoring and alerting.',
-    stack: ['Node.js', 'Laravel', 'Docker', 'Docker Compose', 'Jenkins', 'AWS EC2', 'Prometheus', 'Grafana', 'AWS', 'Bash'],
+      'Automated deployment of Node.js and Laravel applications on AWS EC2 using Docker, Jenkins, with integrated Prometheus and Grafana for real-time monitoring and alerting.',
+    stack: ['Docker', 'Jenkins', 'AWS EC2', 'Prometheus', 'Grafana', 'Bash'],
     highlight:
       'Achieved end-to-end automation and full observability with proactive alerts and zero manual monitoring.',
   },
   {
-    title: 'Enterprise Network Configuration & Automation',
+    title: 'Automated API Regression Testing Tool',
     description:
-      'Configured, deployed, and automated multi-vendor networks for banks, cooperatives, government offices, and private institutions. Implemented routing, switching, firewall policies, and wireless infrastructures tailored to client requirements.',
-    stack: [
-      'Cisco',
-      'Juniper',
-      'Huawei',
-      'MikroTik',
-      'Palo Alto',
-      'Sophos',
-      'Fortinet',
-      'Ruijie APs',
-      'Cambium cnPilot',
-      'Ubiquiti UniFi'
-    ],
+      'Designed and developed an API testing platform with integrated CI/CD validation. Stores baseline API responses and automatically compares them during deployment to detect unexpected changes.',
+    stack: ['React', 'Django', 'PostgreSQL', 'CI/CD'],
     highlight:
-      'Delivered fully optimized and automated enterprise networks across diverse environments with high availability, security, and scalable wireless coverage.',
+      'Built response comparison logic to detect unexpected API behavior changes and block faulty deployments.',
   },
   {
-    title: "Automated API Regression Testing Tool",
+    title: 'Multi-Tenant LMS — DevOps & Infrastructure',
     description:
-      "Designed and developed an API testing platform similar to Postman with integrated CI/CD validation. Implemented functionality to store baseline API responses and automatically compare them with new responses during deployment.",
-    stack: [
-      "React",
-      "Django",
-      "PostgreSQL",
-      "CI/CD"
-    ],
+      'Handled DevOps operations for a multi-tenant Learning Management System. Built CI/CD pipelines, containerised services, and managed asynchronous task processing with Kafka and Celery.',
+    stack: ['Django', 'Docker', 'GitLab CI/CD', 'Apache Kafka', 'Django Celery', 'PostgreSQL'],
     highlight:
-      "Built response comparison logic to detect unexpected API behavior changes and block faulty deployments. Developed a React-based interface for managing API collections and test cases."
-  },
-  {
-    title: "Multi-Tenant Learning Management System (LMS) – DevOps & Infrastructure",
-    description:
-      "Handled DevOps operations for a multi-tenant Learning Management System supporting guardian, student, and teacher services. Built CI/CD pipelines, containerized services, and managed asynchronous task processing and event-driven communication for scalable application operations.",
-    stack: [
-      "React",
-      "Django",
-      "PostgreSQL",
-      "Docker",
-      "GitLab CI/CD",
-      "Django Celery",
-      "Apache Kafka"
-    ],
-    highlight:
-      "Automated application deployment and background task processing using Docker, GitLab CI/CD, Celery, and Kafka to support scalable multi-tenant LMS operations."
+      'Automated deployment and background task processing to support scalable multi-tenant LMS operations.',
   },
 ]
-
+ 
 export const skillMatrix: SkillCategory[] = [
   {
-    title: 'Network Architecture',
+    title: 'Network & Security',
     skills: [
-      'Routers / Switches / Firewalls (Cisco, Juniper, Fortinet, Ruijie)',
-      'SD-WAN, VPN, NAS, Secure Network Design',
-      'Protocols: TCP/IP, DHCP, DNS, BGP, MPLS, VPLS',
+      'Fortinet Firewall (HA) & FortiSwitch',
+      'Cisco Switching, VLAN, L2 IPSec VPN',
+      'AWS WAF, IAM, iDRAC, WAN Management',
     ],
   },
   {
-    title: 'Monitoring & Security',
+    title: 'Monitoring & Observability',
     skills: [
-      'Nagios, SolarWinds, PRTG, Cacti, MRTG',
-      'ELK Stack, Wazuh, Wireshark',
-      'SOC Analysis & Incident Response',
+      'Zabbix, Prometheus & Grafana Alerting',
+      'Wazuh EDR, ELK Stack, Wireshark',
+      'SOC Incident Response & System Hardening',
     ],
   },
   {
-    title: 'DevOps & Automation',
+    title: 'Cloud & DevOps',
     skills: [
-      'CI/CD (Jenkins, GitHub Actions, GitLab)',
-      'Docker & Containerization',
-      'Bash/Python scripting, Infrastructure automation',
-      'AWS (EC2, IAM), Oracle Cloud Foundations',
+      'AWS (VPC, EC2, RDS, S3, Route 53, ELB, Lambda, WAF)',
+      'Terraform, Jenkins, GitHub Actions, GitLab CI/CD',
+      'Docker, Kubernetes, Bash & Python Scripting',
     ],
   },
   {
-    title: 'Collaboration & Delivery',
+    title: 'Server Administration',
     skills: [
-      'Troubleshooting & Issue Resolution',
-      'Documentation & Reporting',
-      'Network Planning & Implementation',
+      'Linux (Ubuntu, CentOS, RHEL), Windows Server',
+      'VMware ESXi, MySQL HA, MSSQL, IIS',
+      'On-Premises Bare Metal & Microsoft 365',
     ],
   },
 ]
-
+ 
 export const contactDetails = {
   email: 'sachinsinghey987@gmail.com',
   phone: '+977 98613 24504',
   location: 'Kathmandu, Nepal · Remote friendly',
   availabilityNote:
-    'Let’s connect if you’re building secure, scalable, and automation-driven network solutions.',
+    "Let's connect if you are building secure, scalable, and automation-driven infrastructure solutions.",
   socials: [
     {
       label: 'LinkedIn',
@@ -362,7 +326,7 @@ export const contactDetails = {
     { label: 'GitHub', href: 'https://github.com/1996sachin' },
   ],
 }
-
+ 
 export const defaultPortfolioContent: PortfolioContent = {
   heroContent,
   aboutHighlights,
@@ -373,3 +337,4 @@ export const defaultPortfolioContent: PortfolioContent = {
   skillMatrix,
   contactDetails,
 }
+ 
