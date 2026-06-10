@@ -7,7 +7,8 @@ const ForgotPasswordPage = () => {
   const [status, setStatus] = useState('')
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-
+  const apiBaseUrl = import.meta.env.VITE_API_URL ?? ''
+  
   const handleResetRequest = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
@@ -15,7 +16,7 @@ const ForgotPasswordPage = () => {
     setIsLoading(true)
 
     try {
-      const response = await fetch('/api/forgot-password', {
+      const response = await fetch(`${apiBaseUrl}/api/forgot-password`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -12,13 +12,15 @@ const LoginPage = () => {
 
   const from = (location.state as { from?: { pathname: string } })?.from?.pathname || '/admin'
 
+  const apiBaseUrl = import.meta.env.VITE_API_URL ?? ''
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
     setIsLoading(true)
 
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch(`${apiBaseUrl}/api/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
