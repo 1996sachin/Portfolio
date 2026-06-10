@@ -90,13 +90,15 @@ const ACTUAL_JWT_SECRET = JWT_SECRET || 'dev-secret-only';
 
 // Recursive sanitizer to scrub all strings in an object
 const sanitizeData = (data) => {
+  if (data === null || data === undefined) return data;
+  
   if (typeof data === 'string') {
     return validator.escape(data.trim());
   }
   if (Array.isArray(data)) {
     return data.map(sanitizeData);
   }
-  if (data !== null && typeof data === 'object') {
+  if (typeof data === 'object') {
     const sanitized = {};
     for (const [key, value] of Object.entries(data)) {
       sanitized[key] = sanitizeData(value);
@@ -105,6 +107,15 @@ const sanitizeData = (data) => {
   }
   return data;
 };
+
+// Global Error Handler
+app.use((err, req, res, next) => {
+  console.error('[Error Handler]', err);
+  res.status(500).json({ 
+    success: false, 
+    message: process.env.NODE_ENV === 'production' ? 'Internal Server Error' : err.message 
+  });
+});
 
 const defaultContent = {
   heroContent: {
