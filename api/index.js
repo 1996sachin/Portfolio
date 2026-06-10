@@ -73,6 +73,7 @@ const corsOptions = {
     'http://localhost:5173',
     'https://sachinsinghchaudhary.com.np',
     'https://www.sachinsinghchaudhary.com.np'
+    'https://portfolio-1-pwgm.onrender.com'
   ],
   optionsSuccessStatus: 200
 };
