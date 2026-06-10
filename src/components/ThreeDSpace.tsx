@@ -585,9 +585,14 @@ const ThreeDSpace = () => {
     }
   }, [location.pathname])
 
-  // Don't render full 3D labels or interactive nodes on admin panel
-  const isAdmin = location.pathname.startsWith('/admin')
-  if (isAdmin) return null
+  // Don't render full 3D labels or interactive nodes on admin/auth pages
+  const isAuthPage = 
+    location.pathname.startsWith('/admin') || 
+    location.pathname === '/login' || 
+    location.pathname === '/forgot-password' || 
+    location.pathname === '/reset-password'
+
+  if (isAuthPage) return null
 
   const isHome = location.pathname === '/'
 

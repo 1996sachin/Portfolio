@@ -21,6 +21,9 @@ const CustomCursor = () => {
       const isInteractive =
         target.tagName === 'A' ||
         target.tagName === 'BUTTON' ||
+        target.tagName === 'INPUT' ||
+        target.tagName === 'TEXTAREA' ||
+        target.tagName === 'SELECT' ||
         target.closest('a') ||
         target.closest('button') ||
         target.closest('.tilt-card') ||

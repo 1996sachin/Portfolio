@@ -2,6 +2,9 @@ import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Layout from './components/Layout'
 import AdminPage from './pages/AdminPage'
+import LoginPage from './pages/LoginPage'
+import ForgotPasswordPage from './pages/ForgotPasswordPage'
+import ResetPasswordPage from './pages/ResetPasswordPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import EducationPage from './pages/EducationPage'
@@ -22,6 +25,9 @@ const App = () => {
         <Route path="/skills" element={<SkillsPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/admin" element={<AdminPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        <Route path="/reset-password" element={<ResetPasswordPage />} />
       </Route>
     </Routes>
   )

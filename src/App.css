@@ -10,12 +10,16 @@
 
 .app-main {
   flex: 1;
+  position: relative;
+  z-index: 2;
 }
 
 .page {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .page-header {
@@ -700,7 +704,119 @@
 .admin-editor {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.admin-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.admin-form input,
+.admin-form textarea {
+  border: 1px solid var(--outline);
+  border-radius: var(--radius-sm);
+  background: rgba(5, 6, 12, 0.8);
+  padding: 0.85rem;
+  color: #fff;
+  font: inherit;
+}
+
+.admin-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.admin-form-group {
+  border: 1px solid var(--outline);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.02);
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
+}
+
+.admin-form-group h3,
+.admin-form-group h5 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.admin-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.admin-form-item {
+  border: 1px solid var(--outline);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.admin-form-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-form-item-header h4 {
+  margin: 0;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.admin-input-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.admin-input-group input {
+  flex: 1;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+.btn.sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.btn.danger {
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.btn.danger:hover {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: #ef4444;
+}
+
+.admin-tags-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .admin-editor-head {
@@ -1177,7 +1293,7 @@
 
 /* 2. Hide default cursor on desktops to support follower cursor */
 @media (pointer: fine) {
-  body, a, button, .tilt-card, .hud-badge, .project-card, .quick-card-link, .project-item-row, .view-all-btn {
+  body, a, button, input, textarea, select, .tilt-card, .hud-badge, .project-card, .quick-card-link, .project-item-row, .view-all-btn {
     cursor: none !important;
   }
 }

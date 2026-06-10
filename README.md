@@ -1,3 +1,29 @@
+## Dynamic Content & Admin Panel
+
+This portfolio features a dynamic content management system that allows you to update your details directly from the browser without modifying code.
+
+### 1. Configure the Server
+The backend requires an `ADMIN_TOKEN` for security. Set this as an environment variable in your production environment (e.g., Vercel, Heroku, or your own server).
+
+```env
+ADMIN_TOKEN=your_secure_random_token_here
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_app_specific_password
+```
+
+### 2. Access the Admin Panel
+1. Start the server (`npm start`).
+2. Navigate to `/admin` in your browser.
+3. Enter your `ADMIN_TOKEN`.
+4. Use the intuitive forms to update your Hero, Experience, Projects, and more.
+5. Click **Save All Changes** to persist the updates to `data/content.json`.
+
+### 3. How it Works
+- **Frontend**: Fetches content from `/api/content` on load and uses it throughout the site.
+- **Backend**: An Express API serves the content and handles updates.
+- **Persistence**: Content is stored in `data/content.json`.
+- **Fallback**: If the API is unavailable, the site gracefully falls back to the default content in `src/data/content.ts`.
+
 ## Setup Instructions
 
 1. **Clone the repository**
