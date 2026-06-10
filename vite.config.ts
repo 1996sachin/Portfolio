@@ -9,17 +9,6 @@ export default defineConfig({
   },
   build: {
     sourcemap: false,
-    rollupOptions: {
-      external: ['react', 'react-dom', 'three', 'framer-motion'],
-      output: {
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
-          three: 'THREE',
-          'framer-motion': 'Motion',
-        },
-      },
-    },
   },
   server: {
     proxy: {
