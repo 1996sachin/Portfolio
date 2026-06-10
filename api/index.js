@@ -71,6 +71,7 @@ app.use('/api/contact', contactLimiter);
 const corsOptions = {
   origin: [
     'http://localhost:5173',
+    'http://localhost:5174',
     'https://sachinsinghchaudhary.com.np',
     'https://www.sachinsinghchaudhary.com.np',
     'https://portfolio-1-pwgm.onrender.com'
