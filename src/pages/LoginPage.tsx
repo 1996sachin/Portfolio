@@ -12,7 +12,7 @@ const LoginPage = () => {
 
   const from = (location.state as { from?: { pathname: string } })?.from?.pathname || '/admin'
 
-  const apiBaseUrl = import.meta.env.VITE_API_URL ?? ''
+  const apiBaseUrl = '' // Forced empty to use Vite proxy locally
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()

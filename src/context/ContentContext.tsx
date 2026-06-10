@@ -20,7 +20,7 @@ type ContentContextValue = {
 
 const ContentContext = createContext<ContentContextValue | undefined>(undefined)
 
-const apiBaseUrl = import.meta.env.VITE_API_URL ?? ''
+const apiBaseUrl = '' // Forced empty to use Vite proxy locally
 
 export const ContentProvider = ({ children }: { children: ReactNode }) => {
   const [content, setContent] = useState<PortfolioContent>(defaultPortfolioContent)

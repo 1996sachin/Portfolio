@@ -11,6 +11,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import validator from 'validator';
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -73,8 +74,7 @@ const corsOptions = {
     'http://localhost:5173',
     'http://localhost:5174',
     'https://sachinsinghchaudhary.com.np',
-    'https://www.sachinsinghchaudhary.com.np',
-    'https://portfolio-1-pwgm.onrender.com'
+    'https://www.sachinsinghchaudhary.com.np'
   ],
   optionsSuccessStatus: 200
 };
@@ -87,6 +87,24 @@ if (!JWT_SECRET && process.env.NODE_ENV === 'production') {
   process.exit(1);
 }
 const ACTUAL_JWT_SECRET = JWT_SECRET || 'dev-secret-only';
+
+// Recursive sanitizer to scrub all strings in an object
+const sanitizeData = (data) => {
+  if (typeof data === 'string') {
+    return validator.escape(data.trim());
+  }
+  if (Array.isArray(data)) {
+    return data.map(sanitizeData);
+  }
+  if (data !== null && typeof data === 'object') {
+    const sanitized = {};
+    for (const [key, value] of Object.entries(data)) {
+      sanitized[key] = sanitizeData(value);
+    }
+    return sanitized;
+  }
+  return data;
+};
 
 const defaultContent = {
   heroContent: {
@@ -190,10 +208,15 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post('/api/login', loginLimiter, async (req, res) => {
-  const { email, password } = req.body;
+  let { email, password } = req.body;
   
   if (!email || !password) {
     return res.status(400).json({ success: false, message: 'Email and password are required.' });
+  }
+
+  email = validator.normalizeEmail(email);
+  if (!validator.isEmail(email)) {
+    return res.status(400).json({ success: false, message: 'Invalid email format.' });
   }
 
   const admin = await getAdminCredentials();
@@ -219,10 +242,16 @@ app.post('/api/login', loginLimiter, async (req, res) => {
 });
 
 app.post('/api/forgot-password', async (req, res) => {
-  const { email } = req.body;
+  let { email } = req.body;
+  
+  if (!email || !validator.isEmail(email)) {
+    return res.status(200).json({ success: true, message: 'If that account exists, an email has been sent.' });
+  }
+  
+  email = validator.normalizeEmail(email);
   const admin = await getAdminCredentials();
 
-  if (!email || email !== admin.email) {
+  if (email !== admin.email) {
     return res.status(200).json({ success: true, message: 'If that account exists, an email has been sent.' });
   }
 
@@ -252,7 +281,7 @@ app.post('/api/forgot-password', async (req, res) => {
 app.post('/api/reset-password', async (req, res) => {
   const { token, newPassword } = req.body;
 
-  if (!token || !newPassword) {
+  if (!token || !newPassword || validator.isEmpty(newPassword)) {
     return res.status(400).json({ success: false, message: 'Token and new password are required.' });
   }
 
@@ -288,7 +317,8 @@ app.put('/api/content', requireAdmin, async (req, res) => {
   }
 
   try {
-    await writeContent(req.body);
+    const sanitizedContent = sanitizeData(req.body);
+    await writeContent(sanitizedContent);
     res.status(200).json({ success: true, message: 'Content saved successfully.' });
   } catch (error) {
     console.error('Error saving content:', error);
@@ -297,11 +327,20 @@ app.put('/api/content', requireAdmin, async (req, res) => {
 });
 
 app.post('/api/contact', async (req, res) => {
-  const { name, email, message } = req.body;
+  let { name, email, message } = req.body;
 
   if (!name || !email || !message) {
     return res.status(400).json({ success: false, message: 'Please fill in all fields.' });
   }
+
+  if (!validator.isEmail(email)) {
+    return res.status(400).json({ success: false, message: 'Please provide a valid email address.' });
+  }
+
+  // Sanitize inputs
+  name = validator.escape(name.trim());
+  email = validator.normalizeEmail(email);
+  message = validator.escape(message.trim());
 
   try {
     const mailOptions = {

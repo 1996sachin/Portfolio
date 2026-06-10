@@ -11,7 +11,7 @@ const ResetPasswordPage = () => {
   const [status, setStatus] = useState('')
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-  const apiBaseUrl = import.meta.env.VITE_API_URL ?? ''
+  const apiBaseUrl = '' // Forced empty to use Vite proxy locally
 
   const handleReset = async (e: React.FormEvent) => {
     e.preventDefault()

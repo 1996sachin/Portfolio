@@ -15,7 +15,7 @@ import ContactForm from '../components/admin/ContactForm'
 
 type EditableSection = keyof PortfolioContent
 
-const apiBaseUrl = import.meta.env.VITE_API_URL ?? ''
+const apiBaseUrl = '' // Forced empty to use Vite proxy locally
 
 const sectionLabels: Record<EditableSection, string> = {
   heroContent: 'Hero',
@@ -166,13 +166,33 @@ const AdminPage = () => {
 
   return (
     <PageWrapper
-      eyebrow="Admin"
-      title="Portfolio Content Manager"
-      description="Update portfolio details from the browser. Use forms or switch to JSON mode."
+      eyebrow="Dashboard"
+      title="Admin Control Center"
+      description="System core configuration and content management interface."
     >
-      <section className="admin-shell">
-        <div className="admin-panel admin-sidebar">
-          <div className="admin-tabs" role="tablist" aria-label="Editable content sections">
+      <div className="admin-stats-bar">
+        <div className="stat-card">
+          <span className="stat-label">Site Status</span>
+          <span className="stat-value"><span className="status-indicator"></span>Active</span>
+        </div>
+        <div className="stat-card">
+          <span className="stat-label">Projects</span>
+          <span className="stat-value">{content.projectShowcase.length}</span>
+        </div>
+        <div className="stat-card">
+          <span className="stat-label">Exp. Years</span>
+          <span className="stat-value">3+</span>
+        </div>
+        <div className="stat-card">
+          <span className="stat-label">Auth Level</span>
+          <span className="stat-value">Admin</span>
+        </div>
+      </div>
+
+      <div className="admin-shell">
+        <aside className="admin-sidebar">
+          <h3>Sections</h3>
+          <div className="admin-tabs" role="tablist">
             {editableSections.map((section) => (
               <button
                 key={section}
@@ -186,56 +206,61 @@ const AdminPage = () => {
           </div>
           
           <button 
-            className="btn ghost danger sm" 
+            className="btn ghost danger admin-logout-btn" 
             onClick={handleLogout}
-            style={{ marginTop: '2rem' }}
           >
-            Logout
+            Sign Out
           </button>
-        </div>
+        </aside>
 
-        <div className="admin-panel admin-editor">
-          <div className="admin-editor-head">
-            <div>
+        <main className="admin-editor-card">
+          <header className="admin-editor-header">
+            <div className="admin-editor-title">
               <p className="eyebrow">{activeLabel}</p>
-              <h2>Edit {activeLabel} Section</h2>
+              <h2>Manage {activeLabel}</h2>
+              <p>Configure the {activeLabel.toLowerCase()} section of your portfolio.</p>
             </div>
-            <div className="admin-actions">
+            <div className="admin-form-actions">
               <button 
-                className="btn ghost" 
+                className="btn ghost sm" 
                 type="button" 
                 onClick={() => setEditMode(editMode === 'form' ? 'json' : 'form')}
               >
-                {editMode === 'form' ? 'Switch to JSON' : 'Switch to Form'}
+                {editMode === 'form' ? 'Raw JSON' : 'Back to Form'}
               </button>
-              <button className="btn ghost" type="button" onClick={resetSection}>
+              <button className="btn ghost sm" type="button" onClick={resetSection}>
                 Reset
               </button>
-              <button className="btn primary" type="button" onClick={saveContent} disabled={isSaving}>
-                {isSaving ? 'Saving...' : 'Save All Changes'}
+              <button className="btn primary sm animate-btn" type="button" onClick={saveContent} disabled={isSaving}>
+                {isSaving ? 'Processing...' : 'Sync Changes'}
               </button>
             </div>
+          </header>
+
+          <div className="admin-status-messages">
+            {isLoading && <p className="admin-muted">Fetching latest system state...</p>}
+            {error && <p className="admin-warning">Warning: {error}</p>}
+            {status && <p className="admin-success">Success: {status}</p>}
+            {saveError && <p className="admin-error">Error: {saveError}</p>}
           </div>
 
-          {isLoading && <p className="admin-muted">Loading live content...</p>}
-          {error && <p className="admin-warning">{error}</p>}
-          {status && <p className="admin-success">{status}</p>}
-          {saveError && <p className="admin-error">{saveError}</p>}
-
-          <div className="admin-content-area">
+          <div className="admin-content-area" style={{ marginTop: '1.5rem' }}>
             {editMode === 'json' ? (
               <textarea
                 className="json-editor"
                 spellCheck={false}
                 value={jsonDraft}
                 onChange={(e) => handleJsonChange(e.target.value)}
+                style={{ borderRadius: '8px', border: '1px solid var(--outline)' }}
               />
             ) : (
-              renderForm()
+              <div className="admin-form-scroll">
+                {renderForm()}
+              </div>
             )}
           </div>
-        </div>
-      </section>
+        </main>
+      </div>
     </PageWrapper>
   )
 }
