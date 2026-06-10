@@ -149,9 +149,11 @@ const defaultContent = {
 
 const readContent = async () => {
   try {
+    console.log('[Content] Reading from:', contentFilePath);
     const content = await fs.readFile(contentFilePath, 'utf8');
     return JSON.parse(content);
   } catch (error) {
+    console.error('[Content Error]', error.code, error.message);
     if (error.code === 'ENOENT') {
       return defaultContent;
     }
@@ -384,6 +386,22 @@ app.get('{*path}', (req, res) => {
     if (err) {
       res.status(404).json({ success: false, message: 'Frontend not built yet' });
     }
+  });
+});
+
+// Global Error Handler - MUST BE LAST
+app.use((err, req, res, next) => {
+  console.error('[FATAL ERROR]', {
+    message: err.message,
+    stack: err.stack,
+    path: req.path,
+    method: req.method
+  });
+  
+  res.status(500).json({ 
+    success: false, 
+    message: 'Internal Server Error',
+    error: process.env.NODE_ENV === 'production' ? undefined : err.message
   });
 });
 
