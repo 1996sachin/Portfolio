@@ -147,7 +147,7 @@ export const experienceTimeline: TimelineItem[] = [
     title: 'DevOps & Systems Engineer',
     place: 'Cell Pay (Cellcom Pvt. Ltd.)',
     description:
-      'Assumed full ownership of production hybrid infrastructure spanning on-premise VMware and AWS cloud for payment-grade reliability.',
+      'Full ownership of production hybrid infrastructure spanning on-premise VMware and AWS cloud for payment-grade reliability.',
     highlights: [
       'Manage hybrid infrastructure — VMware ESXi on-premise and AWS cloud — running production Linux servers with Nginx and Apache Tomcat',
       'Administer multi-master MySQL replication cluster ensuring high availability and failover readiness under production load',
