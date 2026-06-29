@@ -39,7 +39,18 @@ export const ContentProvider = ({ children }: { children: ReactNode }) => {
       }
 
       const data = (await response.json()) as PortfolioContent
-      setContent(data)
+      setContent({
+        ...defaultPortfolioContent,
+        ...data,
+        heroContent: {
+          ...defaultPortfolioContent.heroContent,
+          ...data.heroContent,
+          cvDownload: {
+            ...defaultPortfolioContent.heroContent.cvDownload,
+            ...data.heroContent?.cvDownload,
+          },
+        },
+      })
     } catch {
       setContent(defaultPortfolioContent)
       setError('Using built-in content because the content API is unavailable.')

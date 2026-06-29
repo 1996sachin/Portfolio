@@ -11,12 +11,13 @@ const heroStats = [
 ]
 
 const heroNarrative = [
-  'As a DevOps & Systems Engineer and Information Security practitioner, I focus on the critical intersection of automated deployment pipelines, resilient infrastructure, and proactive security controls. I build, monitor, and harden systems from bare-metal iDRAC-managed servers to AWS cloud to protect production environments and ensure payment-grade reliability.',
-  'My daily work spans Fortinet firewalls and FortiSwitch management, Linux server administration across Ubuntu, CentOS, and RHEL, AWS infrastructure including VPC, WAF, EC2, S3, Route 53, RDS, and IAM, L2 IPSec VPN tunnels, Zabbix monitoring, and Jenkins-driven CI/CD pipelines. Every layer from physical hardware to cloud edge is something I own, tune, and secure.',
-  'I am passionate about eliminating manual operational toil while mitigating cyber threats through infrastructure hardening, threat analysis, and self-healing cloud design. Bridging the gap between speed and security is my primary mission.',
+  'As a DevOps & Systems Engineer and Information Security practitioner, I focus on the critical intersection of automated deployment pipelines, resilient infrastructure, and proactive security controls. I build, monitor, and harden systems from bare-metal iDRAC-managed servers to AWS cloud — and led ISO 27001:2022 ISMS implementation through Stage 1 and Stage 2 audits for a SaaS organisation.',
+  'My daily work spans Fortinet firewalls and FortiSwitch management, Linux server administration across Ubuntu, CentOS, and RHEL, AWS infrastructure including VPC, WAF, EC2, S3, Route 53, RDS, and IAM, L2 IPSec VPN tunnels, Zabbix monitoring, and Jenkins-driven CI/CD pipelines. I also design ISMS programmes covering risk assessment, SoA, internal audits, and certification audit coordination.',
+  'I am passionate about eliminating manual operational toil while mitigating cyber threats through infrastructure hardening, ISMS controls, threat analysis, and self-healing cloud design. Bridging the gap between speed and security is my primary mission.',
 ]
 
 const marqueeItems = [
+  'ISO 27001:2022', 'ISMS', 'Risk Assessment', 'Internal Audit',
   'Fortinet Firewall', 'FortiSwitch', 'AWS VPC', 'AWS WAF',
   'EC2 & RDS', 'S3 & Route 53', 'IAM Security', 'Jenkins CI/CD',
   'Ubuntu & CentOS', 'RHEL Server', 'L2 IPSec VPN', 'Zabbix Monitoring',
@@ -74,6 +75,13 @@ const HomePage = () => {
             <Link className="btn ghost animate-btn" to={heroContent.secondaryCta.href}>
               {heroContent.secondaryCta.label}
             </Link>
+            <a
+              className="btn ghost animate-btn"
+              href={heroContent.cvDownload.href}
+              download="Sachin-Singh-Resume.pdf"
+            >
+              {heroContent.cvDownload.label} <span>↓</span>
+            </a>
           </div>
           
           <p className="availability">
@@ -106,7 +114,7 @@ const HomePage = () => {
               ))}
             </ul>
             <div className="hero-card-footer">
-              <p>Hybrid infrastructure, cloud automation, and security hardening.</p>
+              <p>Hybrid infrastructure, ISO 27001 ISMS, cloud automation, and security hardening.</p>
             </div>
           </TiltCard>
         </motion.div>

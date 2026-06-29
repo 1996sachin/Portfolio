@@ -25,7 +25,7 @@ const itemVariants = {
 
 const ContactPage = () => {
   const {
-    content: { contactDetails },
+    content: { contactDetails, heroContent },
   } = usePortfolioContent()
   const [isSent, setIsSent] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -60,6 +60,16 @@ const ContactPage = () => {
                 <li style={{ marginTop: '0.5rem' }}>
                   <span style={{ display: 'block', fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Location</span>
                   <p style={{ margin: 0 }}>{contactDetails.location}</p>
+                </li>
+                <li style={{ marginTop: '0.5rem' }}>
+                  <span style={{ display: 'block', fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Resume</span>
+                  <a
+                    href={heroContent.cvDownload.href}
+                    download="Sachin-Singh-Resume.pdf"
+                    style={{ color: 'var(--accent-secondary)', fontWeight: 600 }}
+                  >
+                    {heroContent.cvDownload.label} ↓
+                  </a>
                 </li>
               </ul>
             </TiltCard>

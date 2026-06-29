@@ -17,6 +17,13 @@ const HeroForm = ({ data, onChange }: HeroFormProps) => {
     })
   }
 
+  const handleCvDownloadChange = (field: 'label' | 'href', value: string) => {
+    onChange({
+      ...data,
+      cvDownload: { ...data.cvDownload, [field]: value },
+    })
+  }
+
   return (
     <div className="admin-form">
       <label>
@@ -87,6 +94,26 @@ const HeroForm = ({ data, onChange }: HeroFormProps) => {
             type="text"
             value={data.secondaryCta.href}
             onChange={(e) => handleCtaChange('secondaryCta', 'href', e.target.value)}
+          />
+        </label>
+      </div>
+
+      <div className="admin-form-group">
+        <h3>Resume Download</h3>
+        <label>
+          Label
+          <input
+            type="text"
+            value={data.cvDownload.label}
+            onChange={(e) => handleCvDownloadChange('label', e.target.value)}
+          />
+        </label>
+        <label>
+          File path (place PDF in public folder)
+          <input
+            type="text"
+            value={data.cvDownload.href}
+            onChange={(e) => handleCvDownloadChange('href', e.target.value)}
           />
         </label>
       </div>
