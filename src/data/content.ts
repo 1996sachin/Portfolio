@@ -76,7 +76,7 @@ export type PortfolioContent = {
  
 export const heroContent = {
   name: 'Sachin Singh',
-  title: 'DevOps & Systems Engineer',
+  title: 'DevOps & System Engineer',
   summary:
     'I manage hybrid infrastructure, harden production systems, and led ISO 27001:2022 implementation from gap assessment through Stage 1 and Stage 2 audits.',
   availability: 'Open to DevOps, Cloud Infrastructure, and Security-focused opportunities.',
@@ -130,7 +130,7 @@ export const narrative = {
  
 export const educationTimeline: TimelineItem[] = [
   {
-    period: '2021 – 2025',
+    period: '2020 – 2024',
     title: 'Bachelor in Computer Application (GPA: 3.05)',
     place: 'Old Baneshwor, Kathmandu',
     College: 'Thames International College, affiliated with Tribhuvan University',
@@ -140,7 +140,8 @@ export const educationTimeline: TimelineItem[] = [
   {
     period: '',
     title: 'Intermediate (+2)',
-    place: 'Nepal Institute of Management and Science (NIMS College)',
+    place: 'Kumaripati, Lalitpur',
+    College: 'Nepal Institute of Management and Science (NIMS College)',
     description: '',
     highlights: [],
   },
@@ -247,6 +248,24 @@ export const experienceTimeline: TimelineItem[] = [
 ]
  
 export const projectShowcase: Project[] = [
+  {
+    title: 'Unified Payment Gateway',
+    description:
+      'Architected, containerized, and deployed a high-availability merchant payment processing platform capable of handling secure transactional workflows. Integrated RESTful microservices built with Java Spring Framework and PostgreSQL, paired with a React and Next.js merchant dashboard, and backed by automated GitLab CI/CD pipelines, containerized runners, multi-stage Docker builds, and Zabbix telemetry on Ubuntu Server.',
+    stack: [
+      'Java Spring Boot',
+      'React',
+      'Next.js',
+      'PostgreSQL',
+      'Docker',
+      'GitLab CI/CD',
+      'Zabbix',
+      'Ubuntu Server',
+    ],
+    link: 'https://upg.cellpay.com.np',
+    highlight:
+      'Implemented automated multi-stage Docker builds and isolated containerized GitLab Runners to optimize image footprints, accelerate deployment workflows, and ensure 24/7 server monitoring.',
+  },
   {
     title: 'ISO 27001:2022 — One Window Pvt Ltd',
     description:
