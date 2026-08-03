@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900">
+  <defs>
+    <!-- Card Shadow -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="25" stdDeviation="30" flood-color="#0F172A" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Clean Canvas Background -->
+  <rect width="1400" height="900" fill="#F8FAFC"/>
+
+  <!-- Main Browser Window -->
+  <g transform="translate(100, 80)" filter="url(#shadow)">
+    <!-- Outer Window Frame -->
+    <rect width="1200" height="740" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    
+    <!-- Window Header / Title Bar -->
+    <path d="M 0 16 A 16 16 0 0 1 16 0 L 1184 0 A 16 16 0 0 1 1200 16 L 1200 84 L 0 84 Z" fill="#F1F5F9" />
+    <line x1="0" y1="84" x2="1200" y2="84" stroke="#E2E8F0" stroke-width="1.5" />
+
+    <!-- Window Window Control Buttons (Red, Yellow, Green) -->
+    <circle cx="30" cy="28" r="6" fill="#EF4444"/>
+    <circle cx="48" cy="28" r="6" fill="#F59E0B"/>
+    <circle cx="66" cy="28" r="6" fill="#10B981"/>
+
+    <!-- Active Tab -->
+    <path d="M 95 44 L 110 16 A 6 6 0 0 1 116 12 L 320 12 A 6 6 0 0 1 326 16 L 341 44 Z" fill="#FFFFFF"/>
+    
+    <!-- Tab Favicon Icon -->
+    <g transform="translate(130, 20) scale(0.038)">
+      <polygon points="256,36 430,136 430,336 256,436 82,336 82,136" fill="none" stroke="#0F172A" stroke-width="30"/>
+      <path d="M 330 180 L 245 180 C 205 180 180 205 180 236 C 180 270 210 286 256 286 L 275 286 C 315 286 340 306 340 336 C 340 370 310 392 256 392 L 180 392" fill="none" stroke="#2563EB" stroke-width="40"/>
+      <path d="M 330 180 L 245 180 C 205 180 180 205 180 236 C 180 270 210 286 256 286 L 275 286 C 315 286 340 306 340 336 C 340 370 310 392 256 392 L 180 392" fill="none" stroke="#06B6D4" stroke-width="20"/>
+    </g>
+
+    <!-- Tab Title -->
+    <text x="156" y="32" font-family="System-UI, sans-serif" font-size="13" font-weight="600" fill="#0F172A">Sachin DevOps | Portfolio</text>
+    <text x="314" y="31" font-family="System-UI, sans-serif" font-size="13" fill="#94A3B8">×</text>
+
+    <!-- Navigation Buttons -->
+    <text x="25" y="66" font-family="System-UI, sans-serif" font-size="16" fill="#94A3B8">←</text>
+    <text x="50" y="66" font-family="System-UI, sans-serif" font-size="16" fill="#94A3B8">→</text>
+    <text x="75" y="66" font-family="System-UI, sans-serif" font-size="16" fill="#94A3B8">↻</text>
+
+    <!-- URL / Address Bar -->
+    <rect x="100" y="48" width="1075" height="28" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+    
+    <!-- Padlock icon -->
+    <path d="M 120 60 V 57 A 4 4 0 0 1 128 57 V 60 M 118 60 H 130 V 68 H 118 Z" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linejoin="round"/>
+    
+    <!-- Website URL -->
+    <text x="138" y="67" font-family="System-UI, monospace, sans-serif" font-size="13" font-weight="500" fill="#0F172A">https://sachindevops.dev</text>
+
+    <!-- Browser Viewport Content -->
+    <g transform="translate(0, 84)">
+      <rect width="1200" height="656" rx="0" fill="#FFFFFF"/>
+
+      <!-- Centered Logo inside Viewport -->
+      <g transform="translate(600, 240)">
+        <!-- Hexagon -->
+        <polygon points="0,-140 120,-65 120,75 0,150 -120,75 -120,-65" fill="none" stroke="#0F172A" stroke-width="12" stroke-linejoin="round"/>
+
+        <!-- Vertex Nodes -->
+        <circle cx="0" cy="-140" r="8" fill="#06B6D4"/>
+        <circle cx="120" cy="-65" r="8" fill="#2563EB"/>
+        <circle cx="120" cy="75" r="8" fill="#06B6D4"/>
+        <circle cx="0" cy="150" r="8" fill="#2563EB"/>
+        <circle cx="-120" cy="75" r="8" fill="#06B6D4"/>
+        <circle cx="-120" cy="-65" r="8" fill="#2563EB"/>
+
+        <!-- Cloud -->
+        <g transform="translate(50, -130) scale(0.65)">
+          <path d="M 12 35 A 18 18 0 0 1 35 15 A 25 25 0 0 1 80 22 A 18 18 0 0 1 85 50 L 12 50 Z" fill="#06B6D4"/>
+        </g>
+
+        <!-- Kubernetes Wheel -->
+        <g transform="translate(-170, -20) scale(0.75)">
+          <circle cx="24" cy="24" r="18" fill="none" stroke="#2563EB" stroke-width="5"/>
+          <circle cx="24" cy="24" r="6" fill="#0F172A"/>
+          <line x1="24" y1="2" x2="24" y2="46" stroke="#2563EB" stroke-width="4"/>
+          <line x1="2" y1="24" x2="46" y2="24" stroke="#2563EB" stroke-width="4"/>
+          <line x1="8" y1="8" x2="40" y2="40" stroke="#2563EB" stroke-width="4"/>
+          <line x1="8" y1="40" x2="40" y2="8" stroke="#2563EB" stroke-width="4"/>
+        </g>
+
+        <!-- Gear -->
+        <g transform="translate(140, -20) scale(0.75)">
+          <circle cx="20" cy="20" r="15" fill="none" stroke="#2563EB" stroke-width="5" stroke-dasharray="6,4"/>
+          <circle cx="20" cy="20" r="6" fill="#0F172A"/>
+        </g>
+
+        <!-- Docker Block -->
+        <g transform="translate(-140, 65) scale(0.7)">
+          <rect x="0" y="10" width="9" height="7" rx="1" fill="#06B6D4"/>
+          <rect x="11" y="10" width="9" height="7" rx="1" fill="#06B6D4"/>
+          <rect x="22" y="10" width="9" height="7" rx="1" fill="#06B6D4"/>
+          <rect x="11" y="1" width="9" height="7" rx="1" fill="#06B6D4"/>
+          <rect x="22" y="1" width="9" height="7" rx="1" fill="#06B6D4"/>
+          <path d="M -4 20 C 15 20 30 20 38 15 C 40 22 34 26 25 26 L -4 26 Z" fill="#2563EB"/>
+        </g>
+
+        <!-- Terminal -->
+        <g transform="translate(110, 65) scale(0.8)">
+          <rect x="0" y="0" width="44" height="32" rx="6" fill="#0F172A"/>
+          <path d="M 10 9 L 19 16 L 10 23" fill="none" stroke="#06B6D4" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="22" y1="23" x2="33" y2="23" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
+        </g>
+
+        <!-- Central S -->
+        <path d="M 50 -45 L -10 -45 C -35 -45 -50 -30 -50 -10 C -50 15 -25 26 0 26 L 15 26 C 40 26 55 40 55 60 C 55 82 35 98 0 98 L -50 98"
+              fill="none" stroke="#2563EB" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 50 -45 L -10 -45 C -35 -45 -50 -30 -50 -10 C -50 15 -25 26 0 26 L 15 26 C 40 26 55 40 55 60 C 55 82 35 98 0 98 L -50 98"
+              fill="none" stroke="#06B6D4" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+
+      <!-- Typography -->
+      <text x="600" y="440" font-family="System-UI, -apple-system, sans-serif" font-size="44" font-weight="900" fill="#0F172A" text-anchor="middle" letter-spacing="4">SACHIN DEVOPS</text>
+      <text x="600" y="490" font-family="System-UI, -apple-system, sans-serif" font-size="24" font-weight="700" fill="#2563EB" text-anchor="middle" letter-spacing="10">PORTFOLIO</text>
+      <line x1="480" y1="515" x2="720" y2="515" stroke="#06B6D4" stroke-width="2.5" stroke-linecap="round" />
+      <text x="600" y="550" font-family="System-UI, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#0F172A" text-anchor="middle" letter-spacing="5">AUTOMATE • BUILD • DEPLOY • SECURE</text>
+    </g>
+  </g>
+</svg>
