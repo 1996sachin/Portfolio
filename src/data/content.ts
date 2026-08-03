@@ -198,16 +198,19 @@ export const experienceTimeline: TimelineItem[] = [
   },
   {
     period: 'Apr 2025 – May 2026',
-    title: 'Network Administrator',
-    place: 'Ambition Guru College',
+    title: 'Network System Administrator',
+    place: 'Ambition Guru',
     description:
-      'Managed campus-wide network infrastructure and IT operations for academic and corporate environments.',
+      'Dual role across multiple organizations — Ambition Guru Corporate and Ambition Guru College — managing distinct infrastructure environments simultaneously to ensure optimal network performance, reliability, and security.',
     highlights: [
-      'Managed campus-wide LAN, WAN, and Wi-Fi networks ensuring uninterrupted academic operations',
-      'Configured Sophos firewalls, VLAN segmentation, routing, and switch stacking for secure connectivity',
-      'Performed capacity planning, vulnerability assessments, and security hardening',
-      'Maintained network documentation, lab usage reports, and system inventories',
-      'Provided IT support to faculty and students for hardware, software, and network issues',
+      'Installed, configured, and maintained network infrastructure including routers, switches, firewalls, servers, and wireless networks',
+      'Managed and troubleshooted firewalls: Fortinet 120G, Fortinet 70G, Sophos XG2100 / XS210, RG-NBR6215-E Ruijie Gateway Firewall',
+      'Configured and maintained routers: RG-EG105G V2 Ruijie Router, Mikrotik RB760iGS (HEX S)',
+      'Worked with switches: Huawei CloudEngine S5735-S-V2 Series, S220-8P4S 8 Port POE Switch, Cloud Engine S5735-L24T4S-A1, Cisco CB350, Cisco SG350-28, Juniper EX2300T',
+      'Managed wireless access points: Ruijie RAP62, RAP2260 Series (Indoor), Ruijie Outdoor AP, UniFi Indoor AP, Cambium cnPilot e400, Huawei AirEngine 5576-26',
+      'Monitored network performance and responded quickly to outages to ensure uptime',
+      'Configured laptops, desktops, printers, and shared office devices',
+      'Coordinated with vendors for technical support and procurement',
     ],
   },
   {
