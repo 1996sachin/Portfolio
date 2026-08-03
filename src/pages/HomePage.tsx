@@ -11,7 +11,7 @@ const heroStats = [
 ]
 
 const heroNarrative = [
-  'As a DevOps & System Engineer and Information Security practitioner, I focus on the critical intersection of automated deployment pipelines, resilient infrastructure, and proactive security controls. I build, monitor, and harden systems from bare-metal iDRAC-managed servers to AWS cloud — and led ISO 27001:2022 ISMS implementation through Stage 1 and Stage 2 audits for a SaaS organisation.',
+  'As a DevOps & System Engineer and Information Security practitioner, I focus on the critical intersection of automated deployment pipelines, resilient infrastructure, and proactive security controls. I build, monitor, and harden systems from bare-metal iDRAC-managed servers to AWS cloud — and led the end-to-end implementation to achieve official ISO 27001:2022 certification for Sociair SaaS platform.',
   'My daily work spans Fortinet firewalls and FortiSwitch management, Linux server administration across Ubuntu, CentOS, and RHEL, AWS infrastructure including VPC, WAF, EC2, S3, Route 53, RDS, and IAM, L2 IPSec VPN tunnels, Zabbix monitoring, and Jenkins-driven CI/CD pipelines. I also design ISMS programmes covering risk assessment, SoA, internal audits, and certification audit coordination.',
   'I am passionate about eliminating manual operational toil while mitigating cyber threats through infrastructure hardening, ISMS controls, threat analysis, and self-healing cloud design. Bridging the gap between speed and security is my primary mission.',
 ]

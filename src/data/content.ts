@@ -78,7 +78,7 @@ export const heroContent = {
   name: 'Sachin Singh',
   title: 'DevOps & System Engineer',
   summary:
-    'I manage hybrid infrastructure, harden production systems, and led ISO 27001:2022 implementation from gap assessment through Stage 1 and Stage 2 audits.',
+    'I manage hybrid infrastructure, harden production systems, and led ISO 27001:2022 ISMS implementation, successfully securing official ISO 27001:2022 certification for Sociair.',
   availability: 'Open to DevOps, Cloud Infrastructure, and Security-focused opportunities.',
   primaryCta: { label: 'View Experience', href: '/experience' },
   secondaryCta: { label: 'Get in touch', href: '/contact' },
@@ -171,11 +171,12 @@ export const experienceTimeline: TimelineItem[] = [
     title: 'Information Security Lead / ISO 27001 Implementation Lead',
     place: 'One Window Private Limited · Sociair CRM+ HRIS',
     description:
-      'Led end-to-end ISO 27001:2022 implementation for One Window Private Limited (Sociair CRM+ HRIS with omnichannel AI integration), overseeing the full ISMS lifecycle from gap assessment through Stage 1 and Stage 2 audits. Served as primary point of accountability across all ISMS controls, documentation, and audit coordination while the organisation’s certification application is in progress.',
+      'Led end-to-end ISO 27001:2022 implementation for One Window Private Limited (Sociair CRM+ HRIS with omnichannel AI integration), overseeing the full ISMS lifecycle from gap assessment through Stage 1 and Stage 2 audits. Served as primary point of accountability across all ISMS controls, documentation, and audit coordination, culminating in successfully receiving official ISO 27001:2022 certification for Sociair.',
     highlights: [
+      '🏆 Breakthrough Achievement: Officially received ISO 27001:2022 Certification for Sociair SaaS platform',
       'Spearheaded full-cycle ISO 27001:2022 implementation, from initial scoping and gap analysis through certification audit readiness',
       'Owned the ISMS design and documentation across all 93 Annex A controls under the 2022 standard',
-      'Led Stage 1 (documentation review) and Stage 2 (on-site audit) with the external certification body — completed both audits with no major non-conformities identified',
+      'Led Stage 1 (documentation review) and Stage 2 (on-site audit) with external certification body — completed both audits with zero major non-conformities',
       'Coordinated cross-functional teams across product, engineering, HR, and operations to embed security controls into daily workflows',
       'Established risk assessment and treatment processes, Statement of Applicability (SoA), and internal audit programme',
       'Served as primary liaison between the organisation and the certifying body throughout the entire audit cycle',
@@ -267,11 +268,11 @@ export const projectShowcase: Project[] = [
       'Implemented automated multi-stage Docker builds and isolated containerized GitLab Runners to optimize image footprints, accelerate deployment workflows, and ensure 24/7 server monitoring.',
   },
   {
-    title: 'ISO 27001:2022 — One Window Pvt Ltd',
+    title: 'ISO 27001:2022 Certification — Sociair (One Window Pvt Ltd)',
     description:
-      'End-to-end ISO 27001:2022 implementation for One Window Private Limited (parent of Ambition Guru Pvt. Ltd.), scoped to Sociair — a CRM+ HRIS platform with omnichannel AI integration. Owned the full ISMS lifecycle from gap assessment and risk treatment through Stage 1 and Stage 2 audits.',
+      'End-to-end ISO 27001:2022 implementation and certification for One Window Private Limited (parent of Ambition Guru Pvt. Ltd.), scoped to Sociair — a CRM+ HRIS platform with omnichannel AI integration. Owned the full ISMS lifecycle from gap assessment and risk treatment through Stage 1 and Stage 2 audits, officially achieving ISO 27001:2022 certification.',
     stack: [
-      'ISO 27001:2022',
+      'ISO 27001:2022 Certified',
       'ISMS',
       'Risk Assessment',
       'SoA',
@@ -279,7 +280,7 @@ export const projectShowcase: Project[] = [
       'Annex A Controls',
     ],
     highlight:
-      'Completed Stage 1 and Stage 2 audits with no major non-conformities identified; organisation certification application in progress.',
+      '🏆 Major Breakthrough: Officially received ISO 27001:2022 Certification for Sociair following Stage 1 and Stage 2 audits with zero major non-conformities identified.',
   },
   {
     title: 'VPN Monitor Dashboard',
@@ -335,7 +336,7 @@ export const skillMatrix: SkillCategory[] = [
   {
     title: 'Information Security & ISMS',
     skills: [
-      'ISO 27001:2022 ISMS Implementation',
+      'ISO 27001:2022 Certification & ISMS Implementation',
       'ISMS Design, Risk Assessment & Treatment',
       'Statement of Applicability (SoA) & Internal Audit',
       'Annex A Controls (93 controls, 2022 standard)',
