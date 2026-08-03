@@ -23,8 +23,8 @@ const Navbar = () => {
     <header className="nav">
       <div className="nav-brand">
         <NavLink to="/" onClick={closeMenu} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <img src="/favicon.svg" alt="Sachin DevOps Logo" style={{ width: '28px', height: '28px' }} />
-          <span>SACHIN DEVOPS</span>
+          <img src="/favicon.svg" alt="Sachin Singh Logo" style={{ width: '28px', height: '28px' }} />
+          <span>Sachin Singh</span>
         </NavLink>
       </div>
 

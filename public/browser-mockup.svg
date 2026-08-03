@@ -34,7 +34,7 @@
     </g>
 
     <!-- Tab Title -->
-    <text x="156" y="32" font-family="System-UI, sans-serif" font-size="13" font-weight="600" fill="#0F172A">Sachin DevOps | Portfolio</text>
+    <text x="156" y="32" font-family="System-UI, sans-serif" font-size="13" font-weight="600" fill="#0F172A">Sachin Singh | Portfolio</text>
     <text x="314" y="31" font-family="System-UI, sans-serif" font-size="13" fill="#94A3B8">×</text>
 
     <!-- Navigation Buttons -->
@@ -49,7 +49,7 @@
     <path d="M 120 60 V 57 A 4 4 0 0 1 128 57 V 60 M 118 60 H 130 V 68 H 118 Z" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linejoin="round"/>
     
     <!-- Website URL -->
-    <text x="138" y="67" font-family="System-UI, monospace, sans-serif" font-size="13" font-weight="500" fill="#0F172A">https://sachindevops.dev</text>
+    <text x="138" y="67" font-family="System-UI, monospace, sans-serif" font-size="13" font-weight="500" fill="#0F172A">https://sachinsingh.dev</text>
 
     <!-- Browser Viewport Content -->
     <g transform="translate(0, 84)">
@@ -114,7 +114,7 @@
       </g>
 
       <!-- Typography -->
-      <text x="600" y="440" font-family="System-UI, -apple-system, sans-serif" font-size="44" font-weight="900" fill="#0F172A" text-anchor="middle" letter-spacing="4">SACHIN DEVOPS</text>
+      <text x="600" y="440" font-family="System-UI, -apple-system, sans-serif" font-size="44" font-weight="900" fill="#0F172A" text-anchor="middle" letter-spacing="4">SACHIN SINGH</text>
       <text x="600" y="490" font-family="System-UI, -apple-system, sans-serif" font-size="24" font-weight="700" fill="#2563EB" text-anchor="middle" letter-spacing="10">PORTFOLIO</text>
       <line x1="480" y1="515" x2="720" y2="515" stroke="#06B6D4" stroke-width="2.5" stroke-linecap="round" />
       <text x="600" y="550" font-family="System-UI, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#0F172A" text-anchor="middle" letter-spacing="5">AUTOMATE • BUILD • DEPLOY • SECURE</text>
