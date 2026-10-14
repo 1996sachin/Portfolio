@@ -66,6 +66,8 @@ const ContactPage = () => {
                   <a
                     href={heroContent.cvDownload.href}
                     download="Sachin-Singh-Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     style={{ color: 'var(--accent-secondary)', fontWeight: 600 }}
                   >
                     {heroContent.cvDownload.label} ↓

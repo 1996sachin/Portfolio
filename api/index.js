@@ -130,6 +130,10 @@ const defaultContent = {
     secondaryCta: {
       label: "Get in touch",
       href: "/contact"
+    },
+    cvDownload: {
+      label: "Download Resume",
+      href: "/Sachin-Singh_Resume-2026.pdf"
     }
   },
   aboutHighlights: [],
@@ -380,6 +384,10 @@ app.use(express.static(distPath));
 app.get('{*path}', (req, res) => {
   if (req.path.startsWith('/api')) {
     return res.status(404).json({ success: false, message: 'API route not found' });
+  }
+  // Return 404 for missing static files with file extensions instead of serving index.html
+  if (path.extname(req.path)) {
+    return res.status(404).send('Not Found');
   }
   const indexPath = path.join(distPath, 'index.html');
   res.sendFile(indexPath, (err) => {

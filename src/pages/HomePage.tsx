@@ -79,6 +79,8 @@ const HomePage = () => {
               className="btn ghost animate-btn"
               href={heroContent.cvDownload.href}
               download="Sachin-Singh-Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {heroContent.cvDownload.label} <span>↓</span>
             </a>
