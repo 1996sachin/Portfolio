@@ -82,7 +82,7 @@ export const heroContent = {
   availability: 'Open to DevOps, Cloud Infrastructure, and Security-focused opportunities.',
   primaryCta: { label: 'View Experience', href: '/experience' },
   secondaryCta: { label: 'Get in touch', href: '/contact' },
-  cvDownload: { label: 'Download Resume', href: '/Sachin-Singh_Resume-2026.pdf' },
+  cvDownload: { label: 'Download Resume', href: '/Sachin_Singh_Resume_2026.pdf' },
 }
  
 export const aboutHighlights = [

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import { usePortfolioContent } from '../context/ContentContext'
 
 interface CommandItem {
   id: string
@@ -22,17 +23,19 @@ const CommandPalette = ({ isOpen, onClose }: CommandPaletteProps) => {
   const [copied, setCopied] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
   const navigate = useNavigate()
+  const { content: { heroContent } } = usePortfolioContent()
+  const resumeHref = heroContent.cvDownload.href || '/Sachin_Singh_Resume_2026.pdf'
 
   const commands: CommandItem[] = [
     {
       id: 'resume',
       title: 'Download Resume (PDF)',
-      subtitle: 'Sachin-Singh_Resume-2026.pdf',
+      subtitle: resumeHref.replace(/^\//, ''),
       category: 'Actions',
       icon: '📄',
       action: () => {
         const link = document.createElement('a')
-        link.href = '/Sachin-Singh_Resume-2026.pdf'
+        link.href = resumeHref
         link.download = 'Sachin-Singh-Resume.pdf'
         link.target = '_blank'
         link.rel = 'noopener noreferrer'

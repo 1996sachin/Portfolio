@@ -21,16 +21,23 @@ const syncResume = () => {
     return
   }
 
-  // Find the newest PDF file by modification time
-  const pdfWithStats = pdfFiles.map((file) => {
-    const fullPath = path.join(publicDir, file)
-    const stats = fs.statSync(fullPath)
-    return { file, fullPath, mtime: stats.mtimeMs, size: stats.size }
-  })
+  // Prioritize Sachin_Singh_Resume_2026.pdf as the canonical source
+  let latestPdf = null
+  const canonicalFile = 'Sachin_Singh_Resume_2026.pdf'
 
-  // Sort by modification time descending
-  pdfWithStats.sort((a, b) => b.mtime - a.mtime)
-  const latestPdf = pdfWithStats[0]
+  if (pdfFiles.includes(canonicalFile)) {
+    const fullPath = path.join(publicDir, canonicalFile)
+    const stats = fs.statSync(fullPath)
+    latestPdf = { file: canonicalFile, fullPath, mtime: stats.mtimeMs, size: stats.size }
+  } else {
+    const pdfWithStats = pdfFiles.map((file) => {
+      const fullPath = path.join(publicDir, file)
+      const stats = fs.statSync(fullPath)
+      return { file, fullPath, mtime: stats.mtimeMs, size: stats.size }
+    })
+    pdfWithStats.sort((a, b) => b.mtime - a.mtime)
+    latestPdf = pdfWithStats[0]
+  }
 
   console.log(`[sync-resume] Latest resume detected: ${latestPdf.file} (${latestPdf.size} bytes)`)
 
@@ -45,12 +52,21 @@ const syncResume = () => {
 
   aliases.forEach((alias) => {
     const targetPath = path.join(publicDir, alias)
-    // Only copy if different or doesn't exist
-    if (alias !== latestPdf.file) {
+    if (alias !== latestPdf.file || !fs.existsSync(targetPath)) {
       fs.copyFileSync(latestPdf.fullPath, targetPath)
       console.log(`[sync-resume] Synced -> public/${alias}`)
     }
   })
+
+  // Also sync to dist/ if dist exists
+  const distDir = path.join(__dirname, '..', 'dist')
+  if (fs.existsSync(distDir)) {
+    aliases.forEach((alias) => {
+      const distTarget = path.join(distDir, alias)
+      fs.copyFileSync(latestPdf.fullPath, distTarget)
+      console.log(`[sync-resume] Synced -> dist/${alias}`)
+    })
+  }
 }
 
 syncResume()

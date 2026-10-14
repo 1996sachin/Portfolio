@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
+import { usePortfolioContent } from '../context/ContentContext'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
+  const { content: { heroContent } } = usePortfolioContent()
+  const resumeHref = heroContent.cvDownload.href || '/Sachin_Singh_Resume_2026.pdf'
 
   return (
     <footer className="site-footer">
@@ -39,7 +42,7 @@ const Footer = () => {
             </a>
             <Link to="/contact">Get in Touch</Link>
             <a
-              href="/Sachin-Singh_Resume-2026.pdf"
+              href={resumeHref}
               download="Sachin-Singh-Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"

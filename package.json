@@ -4,8 +4,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "sync-resume": "node scripts/sync-resume.js",
+    "dev": "node scripts/sync-resume.js && vite",
+    "build": "node scripts/sync-resume.js && tsc -b && vite build",
     "preview": "vite preview",
     "start": "node server.js"
   },

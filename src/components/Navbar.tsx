@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
+import { usePortfolioContent } from '../context/ContentContext'
 
 const navLinks = [
   { label: 'Home', to: '/' },
@@ -18,6 +19,8 @@ interface NavbarProps {
 const Navbar = ({ onOpenCommandPalette }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const location = useLocation()
+  const { content: { heroContent } } = usePortfolioContent()
+  const resumeHref = heroContent.cvDownload.href || '/Sachin_Singh_Resume_2026.pdf'
 
   const isAdminRoute =
     location.pathname.startsWith('/admin') ||
@@ -84,7 +87,7 @@ const Navbar = ({ onOpenCommandPalette }: NavbarProps) => {
                   </button>
                 )}
                 <a
-                  href="/Sachin-Singh_Resume-2026.pdf"
+                  href={resumeHref}
                   download="Sachin-Singh-Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -113,7 +116,7 @@ const Navbar = ({ onOpenCommandPalette }: NavbarProps) => {
               )}
 
               <a
-                href="/Sachin-Singh_Resume-2026.pdf"
+                href={resumeHref}
                 download="Sachin-Singh-Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"

@@ -133,7 +133,7 @@ const defaultContent = {
     },
     cvDownload: {
       label: "Download Resume",
-      href: "/Sachin-Singh_Resume-2026.pdf"
+      href: "/Sachin_Singh_Resume_2026.pdf"
     }
   },
   aboutHighlights: [],
